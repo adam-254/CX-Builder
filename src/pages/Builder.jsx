@@ -39,6 +39,7 @@ function Builder() {
   const [activeModal, setActiveModal] = useState(null)
   const [editingIndex, setEditingIndex] = useState(null)
   const [showSectionManager, setShowSectionManager] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
   const [pages, setPages] = useState([
     { 
       id: 1, 
@@ -177,7 +178,7 @@ function Builder() {
 
   return (
     <>
-      <Header />
+      <Header onMenuToggle={() => setSidebarOpen(true)} />
       <div className="builder-content">
         <Sidebar
           formData={formData}
@@ -187,6 +188,8 @@ function Builder() {
           docType={docType}
           setDocType={setDocType}
           onOpenModal={handleOpenModal}
+          isOpen={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
         />
         <Preview
           formData={formData}

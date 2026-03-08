@@ -3,3 +3,9 @@
   flex: 1;
   overflow: hidden;
 }
+
+@media (max-width: 1024px) {
+  .builder-content {
+    position: relative;
+  }
+}

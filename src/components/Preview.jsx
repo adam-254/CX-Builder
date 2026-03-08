@@ -98,19 +98,19 @@ function Preview({ formData, template, docType, onSave, onDownload, pages, onAdd
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
             </svg>
-            Manage Sections
+            <span>Manage Sections</span>
           </button>
           <button className="btn-save" onClick={onSave}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" stroke="currentColor" strokeWidth="2"/>
             </svg>
-            Save
+            <span>Save</span>
           </button>
           <button className="btn-download" onClick={onDownload}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" strokeWidth="2"/>
             </svg>
-            Download PDF
+            <span>Download PDF</span>
           </button>
         </div>
       </div>
