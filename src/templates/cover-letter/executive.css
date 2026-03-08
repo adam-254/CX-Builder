@@ -1,0 +1,14 @@
+.executive .letter-header {
+  background: #1f2937;
+  color: white;
+  padding: 2rem;
+  margin: -2rem -2rem 2rem -2rem;
+}
+
+.executive .letter-header h1 {
+  color: white;
+}
+
+.executive .letter-header .email {
+  color: #d1d5db;
+}

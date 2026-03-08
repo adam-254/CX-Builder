@@ -1,0 +1,14 @@
+.spectrum .letter-header {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.spectrum .letter-header::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(180deg, #ff0080, #ff8c00, #40e0d0);
+}

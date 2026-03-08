@@ -1,0 +1,46 @@
+.cover-letter-template {
+  width: 8.5in;
+  min-height: 11in;
+  background: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  color: #1f2937;
+}
+
+.letter-header {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+.letter-header .accent-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #3b82f6;
+}
+
+.letter-header h1 {
+  font-size: 2rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.letter-header .email {
+  color: #6b7280;
+}
+
+.letter-body {
+  line-height: 1.8;
+}
+
+.letter-body .date {
+  margin-bottom: 2rem;
+  color: #6b7280;
+}
+
+.letter-body p {
+  margin-bottom: 1rem;
+}

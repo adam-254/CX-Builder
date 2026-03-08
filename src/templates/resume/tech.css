@@ -1,0 +1,119 @@
+.tech .resume-header {
+  background: linear-gradient(90deg, #f0f0f0 0%, #ffffff 100%);
+  padding: 1.5rem;
+  margin: -2rem -2rem 2rem -2rem;
+  border-left: 4px solid #10b981;
+}
+
+.tech .resume-header h1 {
+  font-family: 'Courier New', monospace;
+}
+
+.resume-template {
+  width: 8.5in;
+  min-height: 11in;
+  background: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  color: #1f2937;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.contact-info span::after {
+  content: '•';
+  margin-left: 1rem;
+  color: #d1d5db;
+}
+
+.contact-info span:last-child::after {
+  content: '';
+  margin: 0;
+}
+
+.resume-section {
+  margin-bottom: 2rem;
+}
+
+.resume-section h2 {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #10b981;
+  font-family: 'Courier New', monospace;
+}
+
+.entry {
+  margin-bottom: 1.5rem;
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.entry h3 {
+  font-size: 1.125rem;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+
+.company {
+  color: #4b5563;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.entry-date {
+  color: #6b7280;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.location {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+.skill-group {
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.skill-group strong {
+  color: #1f2937;
+}
+
+.project-url {
+  color: #10b981;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.languages-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.language-item {
+  color: #4b5563;
+}

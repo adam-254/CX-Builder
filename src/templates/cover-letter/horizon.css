@@ -1,0 +1,14 @@
+.horizon .letter-header {
+  background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  padding: 2rem;
+  margin: -2rem -2rem 2rem -2rem;
+}
+
+.horizon .letter-header h1 {
+  color: white;
+}
+
+.horizon .letter-header .email {
+  color: #bfdbfe;
+}

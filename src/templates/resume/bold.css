@@ -1,0 +1,120 @@
+.bold .resume-header h1 {
+  font-weight: 900;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+.resume-template {
+  width: 8.5in;
+  min-height: 11in;
+  background: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  color: #1f2937;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.contact-info span::after {
+  content: '•';
+  margin-left: 1rem;
+  color: #d1d5db;
+}
+
+.contact-info span:last-child::after {
+  content: '';
+  margin: 0;
+}
+
+.resume-section {
+  margin-bottom: 2rem;
+}
+
+.resume-section h2 {
+  font-size: 1.75rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #1f2937;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.entry {
+  margin-bottom: 1.5rem;
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.entry h3 {
+  font-size: 1.25rem;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+  font-weight: 800;
+}
+
+.company {
+  color: #4b5563;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.entry-date {
+  color: #6b7280;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.location {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+.skill-group {
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.skill-group strong {
+  color: #1f2937;
+  font-weight: 800;
+}
+
+.project-url {
+  color: #3b82f6;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.languages-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.language-item {
+  color: #4b5563;
+}

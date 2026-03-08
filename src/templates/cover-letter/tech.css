@@ -1,0 +1,10 @@
+.tech .letter-header {
+  background: linear-gradient(90deg, #f0f0f0 0%, #ffffff 100%);
+  padding: 1.5rem;
+  margin: -2rem -2rem 2rem -2rem;
+  border-left: 4px solid #10b981;
+}
+
+.tech .letter-header h1 {
+  font-family: 'Courier New', monospace;
+}

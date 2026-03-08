@@ -1,0 +1,15 @@
+.prism .letter-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  padding: 2rem;
+  margin: -2rem -2rem 2rem -2rem;
+  color: white;
+}
+
+.prism .letter-header h1 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.prism .letter-header .email {
+  color: #f3f4f6;
+}
