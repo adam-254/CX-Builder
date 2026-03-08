@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import './Preview.css'
 import ModernResume from '../templates/resume/modern'
 import MinimalistResume from '../templates/resume/minimalist'
@@ -59,15 +60,46 @@ const coverLetterTemplates = {
   prism: PrismCoverLetter
 }
 
-function Preview({ formData, template, docType, onSave, onDownload }) {
+function Preview({ formData, template, docType, onSave, onDownload, pages, onAddPage, onDeletePage, onUpdatePage, onManageSections }) {
   const templates = docType === 'resume' ? resumeTemplates : coverLetterTemplates
   const TemplateComponent = templates[template] || templates.modern
+  const pageRefs = useRef([])
+  const [overflowPages, setOverflowPages] = useState([])
+
+  useEffect(() => {
+    // Check for overflow on each page
+    const checkOverflow = () => {
+      const MAX_HEIGHT = 11 * 96 // 11 inches in pixels (96 DPI)
+      const newOverflowPages = []
+
+      pageRefs.current.forEach((ref, index) => {
+        if (ref) {
+          const contentHeight = ref.scrollHeight
+          if (contentHeight > MAX_HEIGHT) {
+            newOverflowPages.push(index)
+          }
+        }
+      })
+
+      setOverflowPages(newOverflowPages)
+    }
+
+    // Check after render and when content changes
+    const timer = setTimeout(checkOverflow, 100)
+    return () => clearTimeout(timer)
+  }, [formData, pages, template])
 
   return (
     <main className="preview-area">
       <div className="preview-header">
         <h3>Preview</h3>
         <div className="preview-actions">
+          <button className="btn-manage" onClick={onManageSections}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+            Manage Sections
+          </button>
           <button className="btn-save" onClick={onSave}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" stroke="currentColor" strokeWidth="2"/>
@@ -83,7 +115,48 @@ function Preview({ formData, template, docType, onSave, onDownload }) {
         </div>
       </div>
       <div className="preview-content">
-        <TemplateComponent data={formData} />
+        <div className="pages-container">
+          {pages.map((page, index) => (
+            <div key={page.id} className="page-wrapper">
+              {pages.length > 1 && (
+                <button 
+                  className="btn-delete-page" 
+                  onClick={() => onDeletePage(page.id)}
+                  title="Delete this page"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                </button>
+              )}
+              {overflowPages.includes(index) && (
+                <div className="overflow-warning">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                  <span>Content exceeds page height! Move some sections to another page.</span>
+                </div>
+              )}
+              <div 
+                ref={el => pageRefs.current[index] = el}
+                className={`page-content ${overflowPages.includes(index) ? 'overflow' : ''}`}
+              >
+                <TemplateComponent 
+                  data={formData} 
+                  pageNumber={index + 1}
+                  sectionsToShow={page.sections}
+                />
+              </div>
+              <div className="page-number">Page {index + 1} of {pages.length}</div>
+            </div>
+          ))}
+          <button className="btn-add-page" onClick={onAddPage}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+            Add Page
+          </button>
+        </div>
       </div>
     </main>
   )

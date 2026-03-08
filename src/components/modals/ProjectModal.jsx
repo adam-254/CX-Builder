@@ -1,13 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './FormModal.css'
 
-function ProjectModal({ onSave, onClose }) {
+function ProjectModal({ onSave, onClose, initialData }) {
   const [formData, setFormData] = useState({
     name: '',
     url: '',
     date: '',
     description: ''
   })
+
+  useEffect(() => {
+    if (initialData) {
+      setFormData(initialData)
+    }
+  }, [initialData])
 
   const handleSubmit = (e) => {
     e.preventDefault()

@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './FormModal.css'
 
-function ReferenceModal({ onSave, onClose }) {
+function ReferenceModal({ onSave, onClose, initialData }) {
   const [formData, setFormData] = useState({
     name: '',
     position: '',
@@ -9,6 +9,12 @@ function ReferenceModal({ onSave, onClose }) {
     email: '',
     phone: ''
   })
+
+  useEffect(() => {
+    if (initialData) {
+      setFormData(initialData)
+    }
+  }, [initialData])
 
   const handleSubmit = (e) => {
     e.preventDefault()

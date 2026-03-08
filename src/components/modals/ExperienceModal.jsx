@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './FormModal.css'
 
-function ExperienceModal({ onSave, onClose }) {
+function ExperienceModal({ onSave, onClose, initialData }) {
   const [formData, setFormData] = useState({
     jobTitle: '',
     company: '',
@@ -11,6 +11,12 @@ function ExperienceModal({ onSave, onClose }) {
     current: false,
     description: ''
   })
+
+  useEffect(() => {
+    if (initialData) {
+      setFormData(initialData)
+    }
+  }, [initialData])
 
   const handleSubmit = (e) => {
     e.preventDefault()

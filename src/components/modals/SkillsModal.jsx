@@ -1,11 +1,17 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './FormModal.css'
 
-function SkillsModal({ onSave, onClose }) {
+function SkillsModal({ onSave, onClose, initialData }) {
   const [formData, setFormData] = useState({
     category: '',
     skills: ''
   })
+
+  useEffect(() => {
+    if (initialData) {
+      setFormData(initialData)
+    }
+  }, [initialData])
 
   const handleSubmit = (e) => {
     e.preventDefault()

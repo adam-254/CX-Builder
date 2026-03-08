@@ -1,10 +1,16 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './FormModal.css'
 
-function InterestsModal({ onSave, onClose }) {
+function InterestsModal({ onSave, onClose, initialData }) {
   const [formData, setFormData] = useState({
     interests: ''
   })
+
+  useEffect(() => {
+    if (initialData) {
+      setFormData(initialData)
+    }
+  }, [initialData])
 
   const handleSubmit = (e) => {
     e.preventDefault()

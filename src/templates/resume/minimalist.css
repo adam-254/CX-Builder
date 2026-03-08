@@ -111,3 +111,11 @@
 .language-item {
   color: #4b5563;
 }
+
+
+.summary-text {
+  color: #374151;
+  line-height: 1.7;
+  font-size: 0.9375rem;
+  font-weight: 400;
+}

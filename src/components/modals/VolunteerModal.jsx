@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './FormModal.css'
 
-function VolunteerModal({ onSave, onClose }) {
+function VolunteerModal({ onSave, onClose, initialData }) {
   const [formData, setFormData] = useState({
     role: '',
     organization: '',
@@ -11,6 +11,12 @@ function VolunteerModal({ onSave, onClose }) {
     current: false,
     description: ''
   })
+
+  useEffect(() => {
+    if (initialData) {
+      setFormData(initialData)
+    }
+  }, [initialData])
 
   const handleSubmit = (e) => {
     e.preventDefault()

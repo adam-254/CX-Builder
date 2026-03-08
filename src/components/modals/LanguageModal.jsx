@@ -1,11 +1,17 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './FormModal.css'
 
-function LanguageModal({ onSave, onClose }) {
+function LanguageModal({ onSave, onClose, initialData }) {
   const [formData, setFormData] = useState({
     language: '',
     proficiency: 'Native'
   })
+
+  useEffect(() => {
+    if (initialData) {
+      setFormData(initialData)
+    }
+  }, [initialData])
 
   const handleSubmit = (e) => {
     e.preventDefault()

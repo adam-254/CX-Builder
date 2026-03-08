@@ -4,7 +4,7 @@ function ResumeContent({ data }) {
       {data.summary && (
         <section className="resume-section">
           <h2>Professional Summary</h2>
-          <p>{data.summary}</p>
+          <p className="summary-text">{data.summary}</p>
         </section>
       )}
 
@@ -23,7 +23,13 @@ function ResumeContent({ data }) {
                 </div>
               </div>
               {exp.location && <p className="location">{exp.location}</p>}
-              {exp.description && <p className="description">{exp.description}</p>}
+              {exp.description && (
+                <ul className="description-list">
+                  {exp.description.split('\n').filter(line => line.trim()).map((line, i) => (
+                    <li key={i}>{line.trim()}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </section>
@@ -44,7 +50,13 @@ function ResumeContent({ data }) {
                 </div>
               </div>
               {edu.location && <p className="location">{edu.location}</p>}
-              {edu.description && <p className="description">{edu.description}</p>}
+              {edu.description && (
+                <ul className="description-list">
+                  {edu.description.split('\n').filter(line => line.trim()).map((line, i) => (
+                    <li key={i}>{line.trim()}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </section>
@@ -71,7 +83,13 @@ function ResumeContent({ data }) {
                 {project.date && <div className="entry-date">{project.date}</div>}
               </div>
               {project.url && <p className="project-url">{project.url}</p>}
-              {project.description && <p className="description">{project.description}</p>}
+              {project.description && (
+                <ul className="description-list">
+                  {project.description.split('\n').filter(line => line.trim()).map((line, i) => (
+                    <li key={i}>{line.trim()}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </section>
@@ -108,7 +126,13 @@ function ResumeContent({ data }) {
                 </div>
               </div>
               {vol.location && <p className="location">{vol.location}</p>}
-              {vol.description && <p className="description">{vol.description}</p>}
+              {vol.description && (
+                <ul className="description-list">
+                  {vol.description.split('\n').filter(line => line.trim()).map((line, i) => (
+                    <li key={i}>{line.trim()}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </section>

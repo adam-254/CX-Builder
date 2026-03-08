@@ -1,13 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './FormModal.css'
 
-function CertificationModal({ onSave, onClose }) {
+function CertificationModal({ onSave, onClose, initialData }) {
   const [formData, setFormData] = useState({
     name: '',
     issuer: '',
     date: '',
     url: ''
   })
+
+  useEffect(() => {
+    if (initialData) {
+      setFormData(initialData)
+    }
+  }, [initialData])
 
   const handleSubmit = (e) => {
     e.preventDefault()

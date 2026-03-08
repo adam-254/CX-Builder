@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './FormModal.css'
 
-function EducationModal({ onSave, onClose }) {
+function EducationModal({ onSave, onClose, initialData }) {
   const [formData, setFormData] = useState({
     degree: '',
     institution: '',
@@ -11,6 +11,12 @@ function EducationModal({ onSave, onClose }) {
     current: false,
     description: ''
   })
+
+  useEffect(() => {
+    if (initialData) {
+      setFormData(initialData)
+    }
+  }, [initialData])
 
   const handleSubmit = (e) => {
     e.preventDefault()
