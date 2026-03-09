@@ -7,7 +7,8 @@ function ReferenceModal({ onSave, onClose, initialData }) {
     position: '',
     company: '',
     email: '',
-    phone: ''
+    phone: '',
+    availableUponRequest: false
   })
 
   useEffect(() => {
@@ -22,44 +23,83 @@ function ReferenceModal({ onSave, onClose, initialData }) {
     onClose()
   }
 
+  const handleToggleAvailableUponRequest = () => {
+    setFormData({ 
+      ...formData, 
+      availableUponRequest: !formData.availableUponRequest,
+      // Clear fields when toggling to "available upon request"
+      ...((!formData.availableUponRequest) && {
+        name: '',
+        position: '',
+        company: '',
+        email: '',
+        phone: ''
+      })
+    })
+  }
+
   return (
     <form onSubmit={handleSubmit} className="form-modal">
-      <input
-        type="text"
-        placeholder="Reference Name"
-        value={formData.name}
-        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-        required
-      />
-      <input
-        type="text"
-        placeholder="Position"
-        value={formData.position}
-        onChange={(e) => setFormData({ ...formData, position: e.target.value })}
-        required
-      />
-      <input
-        type="text"
-        placeholder="Company"
-        value={formData.company}
-        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        required
-      />
-      <input
-        type="tel"
-        placeholder="Phone"
-        value={formData.phone}
-        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-      />
+      <label className="checkbox-label" style={{ marginBottom: '0.5rem' }}>
+        <input
+          type="checkbox"
+          checked={formData.availableUponRequest}
+          onChange={handleToggleAvailableUponRequest}
+        />
+        <span>References available upon request</span>
+      </label>
+
+      {!formData.availableUponRequest && (
+        <>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Reference Name *"
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Position/Title *"
+              value={formData.position}
+              onChange={(e) => setFormData({ ...formData, position: e.target.value })}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Company/Organization"
+              value={formData.company}
+              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="email"
+              placeholder="Email Address *"
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="tel"
+              placeholder="Phone Number (e.g., +1 555-123-4567)"
+              value={formData.phone}
+              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            />
+          </div>
+        </>
+      )}
+
       <div className="modal-actions">
         <button type="button" className="btn-cancel" onClick={onClose}>Cancel</button>
-        <button type="submit" className="btn-submit">Save</button>
+        <button type="submit" className="btn-submit">Save Reference</button>
       </div>
     </form>
   )

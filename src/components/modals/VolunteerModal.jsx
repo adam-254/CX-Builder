@@ -26,26 +26,32 @@ function VolunteerModal({ onSave, onClose, initialData }) {
 
   return (
     <form onSubmit={handleSubmit} className="form-modal">
-      <input
-        type="text"
-        placeholder="Role"
-        value={formData.role}
-        onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-        required
-      />
-      <input
-        type="text"
-        placeholder="Organization"
-        value={formData.organization}
-        onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-        required
-      />
-      <input
-        type="text"
-        placeholder="Location"
-        value={formData.location}
-        onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-      />
+      <div className="form-group">
+        <input
+          type="text"
+          placeholder="Role/Position *"
+          value={formData.role}
+          onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="text"
+          placeholder="Organization *"
+          value={formData.organization}
+          onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="text"
+          placeholder="Location (e.g., New York, NY)"
+          value={formData.location}
+          onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+        />
+      </div>
       <div className="date-row">
         <input
           type="month"
@@ -68,17 +74,19 @@ function VolunteerModal({ onSave, onClose, initialData }) {
           checked={formData.current}
           onChange={(e) => setFormData({ ...formData, current: e.target.checked })}
         />
-        Currently volunteering here
+        <span>I currently volunteer here</span>
       </label>
-      <textarea
-        placeholder="Description"
-        rows="4"
-        value={formData.description}
-        onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-      />
+      <div className="form-group">
+        <textarea
+          placeholder="Describe your volunteer work and contributions..."
+          rows="4"
+          value={formData.description}
+          onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+        />
+      </div>
       <div className="modal-actions">
         <button type="button" className="btn-cancel" onClick={onClose}>Cancel</button>
-        <button type="submit" className="btn-submit">Save</button>
+        <button type="submit" className="btn-submit">Save Volunteer Work</button>
       </div>
     </form>
   )

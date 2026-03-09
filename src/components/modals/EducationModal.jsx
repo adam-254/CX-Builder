@@ -26,26 +26,32 @@ function EducationModal({ onSave, onClose, initialData }) {
 
   return (
     <form onSubmit={handleSubmit} className="form-modal">
-      <input
-        type="text"
-        placeholder="Degree"
-        value={formData.degree}
-        onChange={(e) => setFormData({ ...formData, degree: e.target.value })}
-        required
-      />
-      <input
-        type="text"
-        placeholder="Institution"
-        value={formData.institution}
-        onChange={(e) => setFormData({ ...formData, institution: e.target.value })}
-        required
-      />
-      <input
-        type="text"
-        placeholder="Location"
-        value={formData.location}
-        onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-      />
+      <div className="form-group">
+        <input
+          type="text"
+          placeholder="Degree (e.g., Bachelor of Science in Computer Science) *"
+          value={formData.degree}
+          onChange={(e) => setFormData({ ...formData, degree: e.target.value })}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="text"
+          placeholder="Institution *"
+          value={formData.institution}
+          onChange={(e) => setFormData({ ...formData, institution: e.target.value })}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="text"
+          placeholder="Location (e.g., Boston, MA)"
+          value={formData.location}
+          onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+        />
+      </div>
       <div className="date-row">
         <input
           type="month"
@@ -68,17 +74,19 @@ function EducationModal({ onSave, onClose, initialData }) {
           checked={formData.current}
           onChange={(e) => setFormData({ ...formData, current: e.target.checked })}
         />
-        Currently studying here
+        <span>I currently study here</span>
       </label>
-      <textarea
-        placeholder="Description (optional)"
-        rows="3"
-        value={formData.description}
-        onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-      />
+      <div className="form-group">
+        <textarea
+          placeholder="Additional details (GPA, honors, relevant coursework...)"
+          rows="3"
+          value={formData.description}
+          onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+        />
+      </div>
       <div className="modal-actions">
         <button type="button" className="btn-cancel" onClick={onClose}>Cancel</button>
-        <button type="submit" className="btn-submit">Save</button>
+        <button type="submit" className="btn-submit">Save Education</button>
       </div>
     </form>
   )

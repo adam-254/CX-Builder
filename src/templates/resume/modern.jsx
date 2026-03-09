@@ -21,15 +21,40 @@ function ModernTemplate({ data, pageNumber, sectionsToShow }) {
 
   return (
     <div className="resume-template modern">
+      <div className="decorative-circle decorative-circle-1"></div>
+      <div className="decorative-circle decorative-circle-2"></div>
       {showHeader && data.fullName && (
         <div className="resume-header">
-          <div className="accent-line"></div>
+          <div className="header-top">
+            <div className="title-line"></div>
+            {data.title && <div className="job-title">{data.title}</div>}
+          </div>
           <h1>{data.fullName}</h1>
           <div className="contact-info">
-            {data.email && <span>{data.email}</span>}
-            {data.phone && <span>{data.phone}</span>}
-            {data.linkedin && <span>{data.linkedin}</span>}
-            {data.website && <span>{data.website}</span>}
+            {data.email && (
+              <div className="contact-item">
+                <div className="contact-label">EMAIL</div>
+                <div className="contact-value">{data.email}</div>
+              </div>
+            )}
+            {data.phone && (
+              <div className="contact-item">
+                <div className="contact-label">PHONE</div>
+                <div className="contact-value">{data.phone}</div>
+              </div>
+            )}
+            {data.linkedin && (
+              <div className="contact-item">
+                <div className="contact-label">LINKEDIN</div>
+                <div className="contact-value">{data.linkedin}</div>
+              </div>
+            )}
+            {data.website && (
+              <div className="contact-item">
+                <div className="contact-label">WEBSITE</div>
+                <div className="contact-value">{data.website}</div>
+              </div>
+            )}
           </div>
         </div>
       )}

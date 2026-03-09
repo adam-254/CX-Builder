@@ -26,26 +26,32 @@ function ExperienceModal({ onSave, onClose, initialData }) {
 
   return (
     <form onSubmit={handleSubmit} className="form-modal">
-      <input
-        type="text"
-        placeholder="Job Title"
-        value={formData.jobTitle}
-        onChange={(e) => setFormData({ ...formData, jobTitle: e.target.value })}
-        required
-      />
-      <input
-        type="text"
-        placeholder="Company"
-        value={formData.company}
-        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-        required
-      />
-      <input
-        type="text"
-        placeholder="Location"
-        value={formData.location}
-        onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-      />
+      <div className="form-group">
+        <input
+          type="text"
+          placeholder="Job Title *"
+          value={formData.jobTitle}
+          onChange={(e) => setFormData({ ...formData, jobTitle: e.target.value })}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="text"
+          placeholder="Company *"
+          value={formData.company}
+          onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="text"
+          placeholder="Location (e.g., San Francisco, CA)"
+          value={formData.location}
+          onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+        />
+      </div>
       <div className="date-row">
         <input
           type="month"
@@ -68,17 +74,19 @@ function ExperienceModal({ onSave, onClose, initialData }) {
           checked={formData.current}
           onChange={(e) => setFormData({ ...formData, current: e.target.checked })}
         />
-        Currently working here
+        <span>I currently work here</span>
       </label>
-      <textarea
-        placeholder="Description"
-        rows="4"
-        value={formData.description}
-        onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-      />
+      <div className="form-group">
+        <textarea
+          placeholder="Describe your responsibilities and achievements..."
+          rows="4"
+          value={formData.description}
+          onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+        />
+      </div>
       <div className="modal-actions">
         <button type="button" className="btn-cancel" onClick={onClose}>Cancel</button>
-        <button type="submit" className="btn-submit">Save</button>
+        <button type="submit" className="btn-submit">Save Experience</button>
       </div>
     </form>
   )

@@ -70,6 +70,12 @@ function Sidebar({ formData, setFormData, template, setTemplate, docType, setDoc
           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
         />
         <input
+          type="text"
+          placeholder="Professional Title (e.g., Project Manager)"
+          value={formData.title || ''}
+          onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+        />
+        <input
           type="email"
           placeholder="Email"
           value={formData.email}
@@ -271,8 +277,14 @@ function Sidebar({ formData, setFormData, template, setTemplate, docType, setDoc
         {formData.references && formData.references.map((ref, index) => (
           <div key={index} className="entry-item">
             <div className="entry-item-content">
-              <strong>{ref.name}</strong>
-              <span className="entry-item-sub">{ref.position}</span>
+              {ref.availableUponRequest ? (
+                <strong>Available upon request</strong>
+              ) : (
+                <>
+                  <strong>{ref.name}</strong>
+                  <span className="entry-item-sub">{ref.position}</span>
+                </>
+              )}
             </div>
             <button className="edit-btn" onClick={() => onOpenModal('reference', index)}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">

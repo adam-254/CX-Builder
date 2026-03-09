@@ -9,8 +9,8 @@ function ResumeContent({ data }) {
       )}
 
       {data.experience && data.experience.length > 0 && (
-        <section className="resume-section">
-          <h2>Experience</h2>
+        <section className="resume-section work-history">
+          <h2>Work History</h2>
           {data.experience.map((exp, index) => (
             <div key={index} className="entry">
               <div className="entry-header">
@@ -36,7 +36,7 @@ function ResumeContent({ data }) {
       )}
 
       {data.education && data.education.length > 0 && (
-        <section className="resume-section">
+        <section className="resume-section education-section">
           <h2>Education</h2>
           {data.education.map((edu, index) => (
             <div key={index} className="entry">
@@ -63,7 +63,7 @@ function ResumeContent({ data }) {
       )}
 
       {data.skills && data.skills.length > 0 && (
-        <section className="resume-section">
+        <section className="resume-section skills-section">
           <h2>Skills</h2>
           {data.skills.map((skill, index) => (
             <div key={index} className="skill-group">
@@ -96,7 +96,7 @@ function ResumeContent({ data }) {
       )}
 
       {data.certifications && data.certifications.length > 0 && (
-        <section className="resume-section">
+        <section className="resume-section certifications-section">
           <h2>Certifications</h2>
           {data.certifications.map((cert, index) => (
             <div key={index} className="entry">
@@ -163,16 +163,20 @@ function ResumeContent({ data }) {
       {data.references && data.references.length > 0 && (
         <section className="resume-section">
           <h2>References</h2>
-          {data.references.map((ref, index) => (
-            <div key={index} className="entry">
-              <h3>{ref.name}</h3>
-              <p className="company">{ref.position}{ref.company && ` at ${ref.company}`}</p>
-              <p className="contact-info">
-                {ref.email && <span>{ref.email}</span>}
-                {ref.phone && <span>{ref.phone}</span>}
-              </p>
-            </div>
-          ))}
+          {data.references.some(ref => ref.availableUponRequest) ? (
+            <p className="available-upon-request">References available upon request</p>
+          ) : (
+            data.references.map((ref, index) => (
+              <div key={index} className="entry">
+                <h3>{ref.name}</h3>
+                <p className="company">{ref.position}{ref.company && ` at ${ref.company}`}</p>
+                <p className="contact-info">
+                  {ref.email && <span>{ref.email}</span>}
+                  {ref.phone && <span>{ref.phone}</span>}
+                </p>
+              </div>
+            ))
+          )}
         </section>
       )}
     </>

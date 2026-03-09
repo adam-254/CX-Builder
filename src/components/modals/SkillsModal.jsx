@@ -21,23 +21,27 @@ function SkillsModal({ onSave, onClose, initialData }) {
 
   return (
     <form onSubmit={handleSubmit} className="form-modal">
-      <input
-        type="text"
-        placeholder="Category (e.g., Programming Languages)"
-        value={formData.category}
-        onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-        required
-      />
-      <textarea
-        placeholder="Skills (comma separated)"
-        rows="3"
-        value={formData.skills}
-        onChange={(e) => setFormData({ ...formData, skills: e.target.value })}
-        required
-      />
+      <div className="form-group">
+        <input
+          type="text"
+          placeholder="Category (e.g., Programming Languages, Frameworks, Tools) *"
+          value={formData.category}
+          onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <textarea
+          placeholder="Skills (comma separated, e.g., JavaScript, React, Node.js) *"
+          rows="3"
+          value={formData.skills}
+          onChange={(e) => setFormData({ ...formData, skills: e.target.value })}
+          required
+        />
+      </div>
       <div className="modal-actions">
         <button type="button" className="btn-cancel" onClick={onClose}>Cancel</button>
-        <button type="submit" className="btn-submit">Save</button>
+        <button type="submit" className="btn-submit">Save Skills</button>
       </div>
     </form>
   )

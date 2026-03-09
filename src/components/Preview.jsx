@@ -69,13 +69,19 @@ function Preview({ formData, template, docType, onSave, onDownload, pages, onAdd
   useEffect(() => {
     // Check for overflow on each page
     const checkOverflow = () => {
-      const MAX_HEIGHT = 11 * 96 // 11 inches in pixels (96 DPI)
+      // 11 inches at 96 DPI = 1056px
+      const MAX_HEIGHT = 11 * 96
       const newOverflowPages = []
 
       pageRefs.current.forEach((ref, index) => {
         if (ref) {
+          // Get the actual content height
           const contentHeight = ref.scrollHeight
-          if (contentHeight > MAX_HEIGHT) {
+          const clientHeight = ref.clientHeight
+          
+          // Check if content is scrollable (overflow exists)
+          // Only flag if scrollHeight significantly exceeds the visible area
+          if (contentHeight > clientHeight && contentHeight > MAX_HEIGHT + 50) {
             newOverflowPages.push(index)
           }
         }

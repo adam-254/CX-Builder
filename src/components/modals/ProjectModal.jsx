@@ -23,35 +23,43 @@ function ProjectModal({ onSave, onClose, initialData }) {
 
   return (
     <form onSubmit={handleSubmit} className="form-modal">
-      <input
-        type="text"
-        placeholder="Project Name"
-        value={formData.name}
-        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-        required
-      />
-      <input
-        type="url"
-        placeholder="Project URL (optional)"
-        value={formData.url}
-        onChange={(e) => setFormData({ ...formData, url: e.target.value })}
-      />
-      <input
-        type="month"
-        placeholder="Date"
-        value={formData.date}
-        onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-      />
-      <textarea
-        placeholder="Description"
-        rows="4"
-        value={formData.description}
-        onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-        required
-      />
+      <div className="form-group">
+        <input
+          type="text"
+          placeholder="Project Name *"
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="url"
+          placeholder="Project URL (e.g., https://github.com/username/project)"
+          value={formData.url}
+          onChange={(e) => setFormData({ ...formData, url: e.target.value })}
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="month"
+          placeholder="Completion Date"
+          value={formData.date}
+          onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+        />
+      </div>
+      <div className="form-group">
+        <textarea
+          placeholder="Describe the project, technologies used, and your role... *"
+          rows="4"
+          value={formData.description}
+          onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+          required
+        />
+      </div>
       <div className="modal-actions">
         <button type="button" className="btn-cancel" onClick={onClose}>Cancel</button>
-        <button type="submit" className="btn-submit">Save</button>
+        <button type="submit" className="btn-submit">Save Project</button>
       </div>
     </form>
   )
