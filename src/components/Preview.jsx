@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import './Preview.css'
+import PDFExportButton from './PDFExportButton'
+import './PDFExportButton.css'
 import ModernResume from '../templates/resume/modern'
 import MinimalistResume from '../templates/resume/minimalist'
 import ExecutiveResume from '../templates/resume/executive'
@@ -112,15 +114,15 @@ function Preview({ formData, template, docType, onSave, onDownload, pages, onAdd
             </svg>
             <span>Save</span>
           </button>
-          <button className="btn-download" onClick={onDownload}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" strokeWidth="2"/>
-            </svg>
-            <span>Download PDF</span>
-          </button>
+          <PDFExportButton 
+            formData={formData}
+            docType={docType}
+            pages={pages}
+            className="btn-download"
+          />
         </div>
       </div>
-      <div className="preview-content">
+      <div className="preview-content" id="preview-content">
         <div className="pages-container">
           {pages.map((page, index) => (
             <div key={page.id} className="page-wrapper">

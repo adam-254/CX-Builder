@@ -401,3 +401,89 @@
     box-shadow: 0 0 0 6px rgba(251, 191, 36, 0.25), inset 0 0 30px rgba(251, 191, 36, 0.15);
   }
 }
+/* PDF Export Styles */
+@media print {
+  .preview-header,
+  .preview-actions,
+  .btn-delete-page,
+  .btn-add-page,
+  .page-number,
+  .overflow-warning {
+    display: none !important;
+  }
+  
+  .preview-content {
+    padding: 0;
+    background: white;
+  }
+  
+  .pages-container {
+    gap: 0;
+    padding: 0;
+  }
+  
+  .page-wrapper {
+    page-break-after: always;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .page-wrapper:last-child {
+    page-break-after: avoid;
+  }
+  
+  .page-content {
+    width: 100%;
+    height: 100vh;
+    overflow: visible;
+    border: none !important;
+    box-shadow: none !important;
+    animation: none !important;
+  }
+}
+
+/* PDF Export Optimization */
+.pdf-export-mode {
+  background: white !important;
+}
+
+.pdf-export-mode .preview-header,
+.pdf-export-mode .preview-actions,
+.pdf-export-mode .btn-delete-page,
+.pdf-export-mode .btn-add-page,
+.pdf-export-mode .page-number,
+.pdf-export-mode .overflow-warning {
+  display: none !important;
+}
+
+.pdf-export-mode .preview-content {
+  padding: 0 !important;
+  background: white !important;
+  overflow: visible !important;
+}
+
+.pdf-export-mode .pages-container {
+  gap: 0 !important;
+  padding: 0 !important;
+}
+
+.pdf-export-mode .page-wrapper {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.pdf-export-mode .page-content {
+  width: 100% !important;
+  overflow: visible !important;
+  border: none !important;
+  box-shadow: none !important;
+  animation: none !important;
+  background: white !important;
+}
+
+/* Ensure text is selectable and high quality for PDF */
+.page-content * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}

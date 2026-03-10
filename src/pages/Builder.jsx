@@ -12,6 +12,7 @@ import ProjectModal from '../components/modals/ProjectModal'
 import CertificationModal from '../components/modals/CertificationModal'
 import LanguageModal from '../components/modals/LanguageModal'
 import ReferenceModal from '../components/modals/ReferenceModal'
+import { exportToPDF } from '../utils/pdfExport'
 import './Builder.css'
 
 function Builder({ loadedDocument, onClearDocument, sidebarOpen, onCloseSidebar }) {
@@ -51,8 +52,18 @@ function Builder({ loadedDocument, onClearDocument, sidebarOpen, onCloseSidebar 
     alert('Document saved successfully!')
   }
 
-  const handleDownload = () => {
-    alert('PDF download functionality - integrate library like jsPDF or react-pdf')
+  const handleDownload = async () => {
+    try {
+      // Generate filename based on document title or default
+      const filename = formData.documentTitle || 
+                      (formData.fullName ? `${formData.fullName}_${docType}` : `my_${docType}`)
+      
+      // Export to PDF
+      await exportToPDF('preview-content', filename, pages)
+    } catch (error) {
+      console.error('Download failed:', error)
+      alert('Failed to download PDF. Please try again.')
+    }
   }
 
   const handleOpenModal = (modalType, index = null) => {

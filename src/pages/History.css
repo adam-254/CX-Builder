@@ -370,3 +370,38 @@
     padding: 0.625rem 0.5rem;
   }
 }
+/* PDF Export Button in History */
+.btn-pdf {
+  background: #3b82f6 !important;
+  color: white !important;
+}
+
+.btn-pdf:hover {
+  background: #2563eb !important;
+  transform: translateY(-1px);
+}
+
+.btn-pdf svg {
+  stroke: white;
+}
+
+.document-actions {
+  gap: 0.5rem;
+}
+
+.document-actions .pdf-export-btn {
+  padding: 0.5rem;
+  min-width: auto;
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+}
+
+.document-actions .pdf-export-btn span {
+  display: none;
+}
+
+.document-actions .pdf-export-btn .spinner-small {
+  width: 14px;
+  height: 14px;
+}
