@@ -11,6 +11,11 @@
   gap: 0;
 }
 
+/* Add top margin when page doesn't have header */
+.creative .left-section:first-child {
+  margin-top: 2rem;
+}
+
 /* Left Dark Side */
 .creative .creative-left {
   background: #1a1a1a;
@@ -262,6 +267,13 @@
 }
 
 .creative .language-item {
+  font-size: 0.8rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.creative .interest-item {
   font-size: 0.8rem;
   color: #1a1a1a;
   margin-bottom: 0.5rem;

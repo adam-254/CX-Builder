@@ -152,11 +152,15 @@ function ResumeContent({ data }) {
       )}
 
       {data.interests && data.interests.length > 0 && (
-        <section className="resume-section">
+        <section className="resume-section interests-section">
           <h2>Interests</h2>
-          {data.interests.map((interest, index) => (
-            <p key={index}>{interest.interests}</p>
-          ))}
+          <div className="interests-list">
+            {data.interests.map((interest, index) => (
+              <span key={index} className="interest-item">
+                {interest.interests}
+              </span>
+            ))}
+          </div>
         </section>
       )}
 

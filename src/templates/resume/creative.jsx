@@ -80,7 +80,7 @@ function CreativeTemplate({ data, pageNumber, sectionsToShow }) {
               {data.fullName.split(' ').map(n => n[0]).join('').slice(0, 2)}
             </div>
             <h1>{data.fullName}</h1>
-            {data.title && <div className="job-title">{data.title}</div>}
+            {data.professionalTitle && <div className="job-title">{data.professionalTitle}</div>}
           </div>
         )}
 

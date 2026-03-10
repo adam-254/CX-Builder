@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import Preview from '../components/Preview'
 import Modal from '../components/Modal'
@@ -15,9 +14,10 @@ import LanguageModal from '../components/modals/LanguageModal'
 import ReferenceModal from '../components/modals/ReferenceModal'
 import './Builder.css'
 
-function Builder() {
+function Builder({ loadedDocument, onClearDocument, sidebarOpen, onCloseSidebar }) {
   const [formData, setFormData] = useState({
-    title: '',
+    documentTitle: '',
+    professionalTitle: '',
     fullName: '',
     email: '',
     phone: '',
@@ -39,7 +39,6 @@ function Builder() {
   const [activeModal, setActiveModal] = useState(null)
   const [editingIndex, setEditingIndex] = useState(null)
   const [showSectionManager, setShowSectionManager] = useState(false)
-  const [sidebarOpen, setSidebarOpen] = useState(false)
   const [pages, setPages] = useState([
     { 
       id: 1, 
@@ -178,7 +177,6 @@ function Builder() {
 
   return (
     <>
-      <Header onMenuToggle={() => setSidebarOpen(true)} />
       <div className="builder-content">
         <Sidebar
           formData={formData}
@@ -189,7 +187,7 @@ function Builder() {
           setDocType={setDocType}
           onOpenModal={handleOpenModal}
           isOpen={sidebarOpen}
-          onClose={() => setSidebarOpen(false)}
+          onClose={onCloseSidebar}
         />
         <Preview
           formData={formData}

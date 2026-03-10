@@ -9,6 +9,11 @@
   font-size: 0.875rem;
 }
 
+/* Add top margin when page doesn't have header */
+.minimalist .resume-section:first-child {
+  margin-top: 2rem;
+}
+
 .minimalist .resume-header {
   display: flex;
   align-items: flex-start;
@@ -296,6 +301,21 @@
 }
 
 .minimalist .language-item {
+  color: #4b5563;
+  font-size: 0.8rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.minimalist .interests-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+}
+
+.minimalist .interest-item {
   color: #4b5563;
   font-size: 0.8rem;
   font-weight: 400;

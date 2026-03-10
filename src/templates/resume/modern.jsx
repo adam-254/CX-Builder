@@ -27,7 +27,7 @@ function ModernTemplate({ data, pageNumber, sectionsToShow }) {
         <div className="resume-header">
           <div className="header-top">
             <div className="title-line"></div>
-            {data.title && <div className="job-title">{data.title}</div>}
+            {data.professionalTitle && <div className="job-title">{data.professionalTitle}</div>}
           </div>
           <h1>{data.fullName}</h1>
           <div className="contact-info">

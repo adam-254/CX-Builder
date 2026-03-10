@@ -119,6 +119,17 @@
   color: #4b5563;
 }
 
+.interests-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.interest-item {
+  color: #4b5563;
+  font-size: 0.9375rem;
+  font-weight: 400;
+}
 
 .summary-text {
   color: #374151;

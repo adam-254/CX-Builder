@@ -10,6 +10,11 @@
   overflow: hidden;
 }
 
+/* Add top margin when page doesn't have header */
+.modern .resume-section:first-child {
+  margin-top: 2rem;
+}
+
 .modern .decorative-circle {
   position: absolute;
   border-radius: 50%;
@@ -286,6 +291,18 @@
 }
 
 .modern .language-item {
+  color: #4b5563;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.modern .interests-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+}
+
+.modern .interest-item {
   color: #4b5563;
   font-size: 0.8rem;
   font-weight: 400;

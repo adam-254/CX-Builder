@@ -12,6 +12,11 @@
   position: relative;
 }
 
+/* Add top margin when page doesn't have header */
+.elegant .main-section:first-child {
+  margin-top: 2rem;
+}
+
 /* Vertical Timeline Line */
 .elegant::before {
   content: '';
@@ -96,6 +101,18 @@
   font-size: 0.7rem;
   color: #718096;
   font-style: italic;
+}
+
+.elegant .interests-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+}
+
+.elegant .interest-item {
+  color: #4b5563;
+  font-size: 0.8rem;
+  font-weight: 400;
 }
 
 .elegant .cert-entry {

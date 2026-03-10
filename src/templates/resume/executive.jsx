@@ -16,7 +16,7 @@ function ExecutiveTemplate({ data, pageNumber, sectionsToShow }) {
       {showHeader && data.fullName && (
         <div className="executive-header">
           <h1>{data.fullName}</h1>
-          {data.title && <div className="job-title">{data.title}</div>}
+          {data.professionalTitle && <div className="job-title">{data.professionalTitle}</div>}
         </div>
       )}
       

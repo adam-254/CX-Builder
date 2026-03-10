@@ -90,7 +90,7 @@ function ElegantTemplate({ data, pageNumber, sectionsToShow }) {
         {showHeader && data.fullName && (
           <div className="main-header">
             <h1>{data.fullName}</h1>
-            {data.title && <div className="job-title">{data.title}</div>}
+            {data.professionalTitle && <div className="job-title">{data.professionalTitle}</div>}
             
             {/* Summary */}
             {showSummary && data.summary && (

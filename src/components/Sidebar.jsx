@@ -56,8 +56,8 @@ function Sidebar({ formData, setFormData, template, setTemplate, docType, setDoc
         <input
           type="text"
           placeholder="e.g., My Resume 2024"
-          value={formData.title}
-          onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+          value={formData.documentTitle}
+          onChange={(e) => setFormData({ ...formData, documentTitle: e.target.value })}
         />
       </section>
 
@@ -72,8 +72,8 @@ function Sidebar({ formData, setFormData, template, setTemplate, docType, setDoc
         <input
           type="text"
           placeholder="Professional Title (e.g., Project Manager)"
-          value={formData.title || ''}
-          onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+          value={formData.professionalTitle || ''}
+          onChange={(e) => setFormData({ ...formData, professionalTitle: e.target.value })}
         />
         <input
           type="email"

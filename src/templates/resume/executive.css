@@ -12,6 +12,11 @@
   gap: 0;
 }
 
+/* Add top margin when page doesn't have header */
+.executive .main-section:first-child {
+  margin-top: 2rem;
+}
+
 /* Header - Spans both columns */
 .executive .executive-header {
   grid-column: 1 / -1;
@@ -241,6 +246,18 @@
 }
 
 .executive .language-item {
+  color: #4a5568;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.executive .interests-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+}
+
+.executive .interest-item {
   color: #4a5568;
   font-size: 0.8rem;
   font-weight: 400;

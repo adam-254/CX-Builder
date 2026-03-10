@@ -1,6 +1,6 @@
 import './Header.css'
 
-function Header({ onMenuToggle }) {
+function Header({ onMenuToggle, onNavigate, currentPage }) {
   return (
     <header className="header">
       <div className="header-left">
@@ -9,15 +9,22 @@ function Header({ onMenuToggle }) {
             <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
           </svg>
         </button>
-        <svg className="icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="2"/>
-          <polyline points="14 2 14 8 20 8" stroke="currentColor" strokeWidth="2"/>
-        </svg>
-        <h1>Resume & Cover Letter Builder</h1>
+        <img src="/CX_logo.png" alt="CX Logo" className="logo" />
+        <h1>CX Builder</h1>
       </div>
       <div className="header-right">
-        <button className="btn-primary active">Builder</button>
-        <button className="btn-secondary">History</button>
+        <button 
+          className={`btn-primary ${currentPage === 'builder' ? 'active' : ''}`}
+          onClick={() => onNavigate('builder')}
+        >
+          Builder
+        </button>
+        <button 
+          className={`btn-secondary ${currentPage === 'history' ? 'active' : ''}`}
+          onClick={() => onNavigate('history')}
+        >
+          History
+        </button>
       </div>
     </header>
   )

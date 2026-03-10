@@ -1,176 +1,322 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-.tech .resume-header {
-  background: linear-gradient(90deg, #f0f0f0 0%, #ffffff 100%);
-  padding: 1.75rem;
-  margin: -2.5rem -2.5rem 2.5rem -2.5rem;
-  border-left: 4px solid #10b981;
-}
-
-.tech .resume-header h1 {
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.tech .resume-section h2 {
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
-  font-weight: 700;
-}
-
-.resume-template {
+.resume-template.tech {
   width: 8.5in;
   min-height: 11in;
   background: white;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-  padding: 2.5rem;
+  padding: 0;
   color: #1f2937;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 10pt;
 }
 
-.contact-info {
+.tech-layout {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  color: #6b7280;
-  font-size: 0.875rem;
-  margin-top: 0.75rem;
-  font-weight: 500;
+  min-height: 11in;
 }
 
-.contact-info span::after {
-  content: '•';
-  margin-left: 1rem;
-  color: #d1d5db;
+/* Left Column */
+.tech-left-column {
+  flex: 1;
+  padding: 2.5rem 2rem 2rem 1.5rem;
+  background: #e8e8e8;
+  border-left: 10px solid #2dd4bf;
+  position: relative;
 }
 
-.contact-info span:last-child::after {
-  content: '';
+/* Header Section */
+.tech-header {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.tech-profile-initials {
+  flex-shrink: 0;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 5px solid #2dd4bf;
+  background: #fce7f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42pt;
+  font-weight: 700;
+  color: #2dd4bf;
+  letter-spacing: 2px;
+}
+
+.tech-header-content {
+  flex: 1;
+  padding-top: 0.25rem;
+}
+
+.tech-header h1 {
+  font-size: 28pt;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 0.25rem 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.tech-title {
+  font-size: 14pt;
+  color: #2dd4bf;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.tech-summary {
+  font-size: 9.5pt;
+  color: #4b5563;
+  line-height: 1.7;
   margin: 0;
+  text-align: justify;
 }
 
-.resume-section {
+/* Separator */
+.tech-separator {
+  height: 2px;
+  background: linear-gradient(to right, #2dd4bf 0%, transparent 100%);
+  margin-bottom: 2rem;
+}
+
+/* Section Styling */
+.tech-section {
+  margin-bottom: 2rem;
+}
+
+.tech-section h2 {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.tech-section-icon {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.5;
+}
+
+.tech-icon {
+  font-size: 13pt;
+  color: #2c3e50;
+}
+
+/* Entry Styling */
+.tech-entry {
+  margin-bottom: 1.5rem;
+  padding-left: 0.25rem;
+}
+
+.tech-entry h3 {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.25rem 0;
+}
+
+.tech-company {
+  font-size: 10pt;
+  color: #2dd4bf;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.tech-link-icon {
+  width: 12px;
+  height: 12px;
+  stroke: #2dd4bf;
+}
+
+.tech-date {
+  font-size: 9pt;
+  color: #2dd4bf;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.tech-description-list {
+  margin: 0.5rem 0 0 1.25rem;
+  padding: 0;
+  list-style: disc;
+}
+
+.tech-description-list li {
+  font-size: 9pt;
+  color: #4b5563;
+  line-height: 1.65;
+  margin-bottom: 0.35rem;
+}
+
+.tech-description-list li::marker {
+  color: #2dd4bf;
+}
+
+/* Right Sidebar */
+.tech-sidebar {
+  width: 290px;
+  background: #37474f;
+  padding: 2.5rem 1.5rem;
+  color: white;
+  position: relative;
+}
+
+.tech-sidebar-circle {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+  width: 20px;
+  height: 20px;
+  background: #2dd4bf;
+  border-radius: 50%;
+}
+
+.tech-sidebar-section {
   margin-bottom: 2.25rem;
 }
 
-.resume-section h2 {
-  font-size: 1.25rem;
-  color: #111827;
-  margin-bottom: 1.25rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #10b981;
+.tech-contact-section {
+  margin-top: 2rem;
+}
+
+.tech-sidebar-section h2 {
+  font-size: 10pt;
   font-weight: 700;
-  letter-spacing: 0.01em;
-}
-
-.entry {
-  margin-bottom: 1.75rem;
-}
-
-.entry-header {
+  color: white;
+  margin-bottom: 1.25rem;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0.5rem;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-.entry h3 {
-  font-size: 1.125rem;
-  color: #111827;
-  margin-bottom: 0.25rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.company {
-  color: #374151;
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.entry-date {
-  color: #6b7280;
-  font-size: 0.875rem;
-  white-space: nowrap;
-  font-weight: 500;
-}
-
-.location {
-  color: #6b7280;
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
-  font-weight: 400;
-}
-
-.description {
-  color: #4b5563;
-  line-height: 1.7;
-  margin-top: 0.5rem;
-  font-size: 0.9375rem;
-  font-weight: 400;
-}
-
-.skill-group {
-  margin-bottom: 0.875rem;
-  color: #4b5563;
-  line-height: 1.7;
-  font-size: 0.9375rem;
-}
-
-.skill-group strong {
-  color: #111827;
-  font-weight: 600;
-}
-
-.project-url {
-  color: #10b981;
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-}
-
-.languages-list {
+/* Contact Items */
+.tech-contact-item {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  font-size: 9pt;
+  line-height: 1.4;
 }
 
-.language-item {
-  color: #4b5563;
-  font-weight: 500;
+.tech-contact-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  background: rgba(45, 212, 191, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(45, 212, 191, 0.4);
 }
 
-.description-list {
-  margin: 0.75rem 0 0 1.5rem;
-  padding: 0;
-  color: #4b5563;
-  line-height: 1.7;
-  font-size: 0.9375rem;
+.tech-contact-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: #2dd4bf;
+  stroke-width: 2;
 }
 
-.description-list li {
-  margin-bottom: 0.375rem;
-  font-weight: 400;
+/* Skills */
+.tech-skill-group {
+  margin-bottom: 1.25rem;
 }
 
-.description-list li::marker {
-  color: #10b981;
-  font-size: 0.875rem;
+.tech-skill-category {
+  font-size: 9.5pt;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-
-.summary-text {
-  color: #374151;
-  line-height: 1.7;
-  font-size: 0.9375rem;
-  font-weight: 400;
-}
-
-.available-upon-request {
-  color: #4b5563;
-  font-size: 0.875rem;
-  font-style: italic;
-  font-weight: 400;
+.tech-skill-list {
+  font-size: 9pt;
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
+}
+
+/* Languages */
+.tech-language-item {
+  margin-bottom: 1rem;
+}
+
+.tech-language-name {
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.tech-language-level {
+  font-size: 8.5pt;
+  color: #2dd4bf;
+  font-style: italic;
+}
+
+/* Interests */
+.tech-interest-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+  font-size: 9.5pt;
+}
+
+.tech-interest-icon {
+  width: 8px;
+  height: 8px;
+  fill: #2dd4bf;
+  flex-shrink: 0;
+}
+
+/* References */
+.tech-references-text {
+  font-size: 9pt;
+  color: rgba(255, 255, 255, 0.85);
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.tech-reference-item {
+  margin-bottom: 1rem;
+}
+
+.tech-reference-name {
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.tech-reference-position {
+  font-size: 8.5pt;
+  color: #2dd4bf;
+  margin-bottom: 0.15rem;
+}
+
+.tech-reference-company {
+  font-size: 8.5pt;
+  color: rgba(255, 255, 255, 0.75);
 }
