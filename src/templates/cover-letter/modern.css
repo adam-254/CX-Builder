@@ -1,46 +1,387 @@
-.cover-letter-template {
+/* Modern Cover Letter Template - Professional Layout */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* ── WRAPPER ── */
+.coverletter-wrapper {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: transparent;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── PAGE ── */
+.coverletter-page {
+  background: #ffffff;
   width: 8.5in;
   min-height: 11in;
-  background: white;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-  padding: 2rem;
-  color: #1f2937;
-}
-
-.letter-header {
+  max-width: 8.5in;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
   position: relative;
-  padding-left: 1rem;
-  margin-bottom: 2rem;
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.letter-header .accent-line {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: #3b82f6;
+/* ── TOP & BOTTOM ACCENT BARS ── */
+.coverletter-top-bar,
+.coverletter-bottom-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #2d4059;
+  flex-shrink: 0;
 }
 
-.letter-header h1 {
-  font-size: 2rem;
-  color: #1f2937;
-  margin-bottom: 0.5rem;
+/* ── HEADER ── */
+.coverletter-header {
+  text-align: center;
+  padding: 40px 60px 24px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.letter-header .email {
-  color: #6b7280;
+.coverletter-name {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #1a1a2e;
+  text-transform: uppercase;
+  margin: 0 0 8px 0;
+  font-family: 'Inter', sans-serif;
 }
 
-.letter-body {
-  line-height: 1.8;
+.coverletter-pro-title {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #666;
+  text-transform: none;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
 }
 
-.letter-body .date {
-  margin-bottom: 2rem;
-  color: #6b7280;
+/* ── BODY LAYOUT ── */
+.coverletter-body {
+  display: flex;
+  flex: 1;
 }
 
-.letter-body p {
-  margin-bottom: 1rem;
+/* ── SIDEBAR ── */
+.coverletter-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  display: flex;
+  position: relative;
+}
+
+.coverletter-sidebar-inner {
+  flex: 1;
+  padding: 36px 16px 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #fff;
+}
+
+/* Right dark bar on sidebar */
+.coverletter-sidebar-bar {
+  width: 8px;
+  background-color: #2d4059;
+  flex-shrink: 0;
+}
+
+/* ── CONTACT ITEMS ── */
+.coverletter-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: #333;
+  line-height: 1.4;
+  min-height: 36px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.coverletter-contact-item span:last-child {
+  flex: 1;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.coverletter-contact-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.phone-icon    { background-color: #2d4059; }
+.email-icon    { background-color: #2d4059; }
+.location-icon { background-color: #2d4059; }
+.linkedin-icon { background-color: #2d4059; }
+.website-icon  { background-color: #2d4059; }
+
+/* ── MAIN CONTENT ── */
+.coverletter-main {
+  flex: 1;
+  padding: 36px 40px 36px 28px;
+  box-sizing: border-box;
+  min-width: 0; /* Prevents flex item from overflowing */
+}
+
+/* Recipient + Date row */
+.coverletter-recipient-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  gap: 20px;
+}
+
+.coverletter-recipient p {
+  margin: 0;
+  font-size: 14px;
+  color: #222;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.coverletter-date {
+  font-size: 14px;
+  color: #444;
+  white-space: nowrap;
+  margin-top: 2px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+/* Subject Line */
+.coverletter-subject {
+  font-size: 15px;
+  color: #2d4059;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  padding: 8px 0;
+  border-bottom: 1px solid #e8e8e8;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Salutation */
+.coverletter-salutation {
+  font-size: 15px;
+  color: #111;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Paragraphs */
+.coverletter-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.coverletter-para {
+  font-size: 14px;
+  color: #222;
+  line-height: 1.6;
+  margin: 0;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  word-spacing: 0.02em;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.coverletter-para:first-child::first-letter {
+  font-size: 17px;
+  font-weight: 600;
+  color: #2d4059;
+}
+
+/* Enhanced paragraph spacing for better readability */
+.coverletter-para + .coverletter-para {
+  margin-top: 2px;
+}
+
+/* Closing */
+.coverletter-closing {
+  font-size: 15px;
+  color: #222;
+  margin: 0 0 12px 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+/* Signature — ultra-creative initial-based designs */
+.coverletter-signature {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.generated-signature {
+  display: inline-block;
+  position: relative;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.signature-svg {
+  display: block;
+  max-width: 120px;
+  height: auto;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.signature-initial {
+  animation: fadeInSignature 1.5s ease-in-out;
+}
+
+@keyframes fadeInSignature {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.text-signature {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a2e;
+  font-style: normal;
+}
+
+/* Signature hover effects */
+.generated-signature:hover .signature-svg {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.generated-signature:hover .signature-initial {
+  fill: #2d4059;
+  transition: fill 0.3s ease;
+}
+
+.generated-signature:hover path {
+  stroke: #2d4059;
+  transition: stroke 0.3s ease;
+}
+
+/* Print optimization */
+@media print {
+  .signature-svg {
+    filter: none;
+  }
+  
+  .generated-signature:hover .signature-svg {
+    transform: none;
+  }
+}
+
+/* ── RESPONSIVE DESIGN ── */
+@media (max-width: 1000px) {
+  .coverletter-wrapper {
+    padding: 16px;
+    background: #fff;
+  }
+  
+  .coverletter-page {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+  }
+  
+  .coverletter-body {
+    flex-direction: column;
+  }
+  
+  .coverletter-sidebar {
+    width: 100%;
+    order: 2;
+  }
+  
+  .coverletter-sidebar-inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 24px;
+    gap: 20px;
+  }
+  
+  .coverletter-contact-item {
+    flex: 1;
+    min-width: 240px;
+  }
+  
+  .coverletter-sidebar-bar {
+    display: none;
+  }
+  
+  .coverletter-main {
+    order: 1;
+    padding: 24px;
+  }
+}
+
+/* ── PRINT ── */
+@media print {
+  .coverletter-wrapper {
+    background: transparent;
+    padding: 0;
+    min-height: auto;
+  }
+
+  .coverletter-page {
+    box-shadow: none;
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    margin: 0;
+  }
+  
+  .coverletter-header {
+    padding: 30px 40px 20px;
+  }
+  
+  .coverletter-sidebar-inner {
+    padding: 30px 16px 30px 32px;
+  }
+  
+  .coverletter-main {
+    padding: 30px 40px 30px 24px;
+  }
+  
+  .coverletter-contact-item {
+    font-size: 13px;
+    gap: 12px;
+  }
+  
+  .coverletter-contact-icon {
+    width: 32px;
+    height: 32px;
+  }
 }
