@@ -1,14 +1,259 @@
-.spectrum .letter-header {
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── wrapper ── */
+.spectrum-cover {
+  font-family: 'Times New Roman', Georgia, serif;
+  background: #fff;
+  width: 794px;
+  min-height: 1123px;
   position: relative;
-  padding-left: 1rem;
+  overflow: hidden;
+  color: #1a1a2e;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
-.spectrum .letter-header::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 6px;
-  background: linear-gradient(180deg, #ff0080, #ff8c00, #40e0d0);
+/* ════════════════════════════
+   HEADER
+   ════════════════════════════ */
+.spectrum-header {
+  position: relative;
+  width: 100%;
+  height: 270px;
 }
+
+/* SVG shapes fill the header exactly */
+.spectrum-header-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── Circular photo ──
+   Left-aligned, top ~0, large circle that sits over the wave */
+.spectrum-photo-wrap {
+  position: absolute;
+  top: 0px;
+  left: 14px;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 7px solid #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  z-index: 10;
+  background: #c5cfe8;
+}
+
+.spectrum-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.spectrum-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 72px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #3b5fc0, #1a3a8f);
+}
+
+/* ── Name + contacts — right half of header, on white bg ── */
+.spectrum-identity {
+  position: absolute;
+  top: 55px;
+  left: 268px;
+  right: 32px;
+  z-index: 10;
+}
+
+.spectrum-name {
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 46px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+  line-height: 1.05;
+  white-space: nowrap;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.spectrum-professional-title {
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.spectrum-divider {
+  width: 100%;
+  height: 2.5px;
+  background: #fff;
+  margin: 10px 0 14px;
+}
+
+.spectrum-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spectrum-contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+}
+
+.spectrum-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  flex-shrink: 0;
+}
+
+.spectrum-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ════════════════════════
+   BODY
+   ════════════════════════ */
+.spectrum-body {
+  padding: 38px 44px 130px 44px;
+  position: relative;
+  z-index: 5;
+}
+
+/* Date section at upper left */
+.spectrum-date-section {
+  margin-bottom: 20px;
+}
+
+.spectrum-date {
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #666;
+}
+
+.spectrum-meta {
+  margin-bottom: 22px;
+}
+
+.spectrum-recipient-section {
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #444;
+  line-height: 1.8;
+}
+
+.spectrum-recipient-section div {
+  margin-bottom: 2px;
+}
+
+.spectrum-letter p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #222;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+/* Subject Line */
+.spectrum-subject {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Salutation */
+.spectrum-salutation {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.spectrum-closing {
+  margin-top: 26px;
+  font-size: 15px;
+  color: #222;
+}
+
+.spectrum-signature {
+  margin: 10px 0 8px;
+  height: 52px;
+}
+
+.spectrum-signatory {
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
+}
+
+/* ════════════════════════
+   FOOTER WAVE
+   ════════════════════════ */
+.spectrum-footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+  line-height: 0;
+}
+
+.spectrum-footer-wave svg {
+  display: block;
+  width: 100%;
+}
+
+/* Signature Styles */
+.spectrum-signature .signature {
+  font-size: 20px;
+  color: #222;
+  font-weight: 600;
+  margin: 10px 0 8px;
+  line-height: 1.2;
+}
+
+.spectrum-signature .signature-cursive { font-family: 'Dancing Script', cursive; }
+.spectrum-signature .signature-elegant { font-family: 'Dancing Script', cursive; }
+.spectrum-signature .signature-modern { font-family: 'Times New Roman', Georgia, serif; font-weight: 300; }
+.spectrum-signature .signature-classic { font-family: 'Times New Roman', Georgia, serif; font-style: italic; }
+.spectrum-signature .signature-bold { font-family: 'Times New Roman', Georgia, serif; font-weight: bold; }
+.spectrum-signature .signature-script { font-family: 'Dancing Script', cursive; }
+.spectrum-signature .signature-handwritten { font-family: 'Dancing Script', cursive; }
+.spectrum-signature .signature-professional { font-family: 'Times New Roman', Georgia, serif; font-weight: 500; }
+.spectrum-signature .signature-artistic { font-family: 'Dancing Script', cursive; transform: rotate(-2deg); }
+.spectrum-signature .signature-minimalist { font-family: 'Times New Roman', Georgia, serif; font-weight: 200; }
+.spectrum-signature .signature-vintage { font-family: 'Times New Roman', Georgia, serif; }
+.spectrum-signature .signature-contemporary { font-family: 'Times New Roman', Georgia, serif; }
+.spectrum-signature .signature-sophisticated { font-family: 'Times New Roman', Georgia, serif; font-style: italic; }
+.spectrum-signature .signature-creative { font-family: 'Times New Roman', Georgia, serif; letter-spacing: 2px; }
+.spectrum-signature .signature-flowing { font-family: 'Dancing Script', cursive; }
