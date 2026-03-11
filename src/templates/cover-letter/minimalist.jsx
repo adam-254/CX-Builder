@@ -164,13 +164,13 @@ I would welcome the opportunity to discuss how my background and enthusiasm can 
         {/* HEADER */}
         <header className="minimalist-header">
           <div className="minimalist-name-section">
-            <h1 className="minimalist-name">{fullName}</h1>
+            <h1 className="minimalist-name">{fullName.toUpperCase()}</h1>
             <div className="minimalist-title-badge">
               {professionalTitle.toUpperCase()}
             </div>
           </div>
           
-          {/* CONTACT INFO ROW */}
+          {/* CONTACT INFO ROW WITH UNDERLINES */}
           <div className="minimalist-contact-row">
             {phone && phone.trim() && (
               <div className="minimalist-contact-item">
@@ -213,8 +213,13 @@ I would welcome the opportunity to discuss how my background and enthusiasm can 
         {/* MAIN CONTENT */}
         <main className="minimalist-main">
           
-          {/* DATE AND RECIPIENT ROW */}
-          <div className="minimalist-top-row">
+          {/* DATE (Separate, right-aligned) */}
+          <div className="minimalist-date-section">
+            <div className="minimalist-date">{currentDate}</div>
+          </div>
+
+          {/* RECIPIENT INFO (Separate section) */}
+          <div className="minimalist-recipient-section">
             <div className="minimalist-recipient">
               <p>{recipientName}</p>
               {companyName && companyName !== 'Company Name' && <p>{companyName}</p>}
@@ -222,7 +227,6 @@ I would welcome the opportunity to discuss how my background and enthusiasm can 
                 <p key={i}>{line}</p>
               ))}
             </div>
-            <div className="minimalist-date">{currentDate}</div>
           </div>
 
           {/* SUBJECT LINE */}
