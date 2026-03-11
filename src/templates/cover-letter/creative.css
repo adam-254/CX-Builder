@@ -1,6 +1,566 @@
-.creative .letter-header h1 {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Creative Cover Letter Template - Modern Artistic Design */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700;900&family=Roboto:wght@300;400;500;600;700&display=swap');
+
+/* ── WRAPPER ── */
+.creative-wrapper {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: transparent;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── PAGE ── */
+.creative-page {
+  background: #ffffff;
+  width: 8.5in;
+  min-height: 11in;
+  max-width: 8.5in;
+  box-shadow: none;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* ── CREATIVE SIDEBAR ── */
+.creative-dome {
+  background: linear-gradient(135deg, #4A90B8 0%, #6BA3C7 50%, #8BB6D6 100%);
+  width: 280px;
+  height: calc(100% - 30px);
+  position: absolute;
+  top: 30px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 25px;
+  color: white;
+  overflow: hidden;
+  border-radius: 140px 140px 0 0;
+  box-shadow: 0 8px 32px rgba(74, 144, 184, 0.3);
+}
+
+/* Decorative background elements */
+.creative-dome::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.creative-dome::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* ── PROFILE INITIALS SECTION ── */
+.creative-initials-section {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.creative-initials-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.creative-initials-container::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), transparent, rgba(255, 255, 255, 0.3));
+  z-index: -1;
+}
+
+.creative-initials-text {
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ── CONTACT SECTION ── */
+.creative-contact-section {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.creative-contact-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 25px 0;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.creative-contact-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+}
+
+.creative-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 18px;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.creative-contact-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.creative-contact-item:hover::before {
+  left: 100%;
+}
+
+.creative-contact-item:hover {
+  transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.creative-contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.creative-contact-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.creative-contact-item:hover .creative-contact-icon::before {
+  opacity: 1;
+}
+
+.creative-contact-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  color: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.creative-contact-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+  line-height: 1.4;
+  word-break: break-word;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* ── MAIN CONTENT ── */
+.creative-main {
+  flex: 1;
+  padding: 50px 45px 50px 40px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: 280px;
+}
+
+/* ── HEADER SECTION ── */
+.creative-header {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.creative-name {
+  font-size: 36px;
+  font-weight: 300;
+  color: #2C3E50;
+  margin: 0 0 15px 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  position: relative;
+}
+
+.creative-name::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #4A90B8, #6BA3C7);
+  border-radius: 2px;
+}
+
+.creative-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #4A90B8, transparent);
+  margin: 20px 0 15px 0;
+}
+
+.creative-document-type {
+  font-size: 14px;
+  font-weight: 500;
+  color: #7F8C8D;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ── RECIPIENT SECTION ── */
+.creative-recipient-section {
+  margin-bottom: 30px;
+}
+
+.creative-recipient p {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  color: #34495E;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+/* ── SALUTATION ── */
+.creative-salutation {
+  font-size: 16px;
+  color: #2C3E50;
+  font-weight: 500;
+  margin: 0 0 25px 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ── CONTENT PARAGRAPHS ── */
+.creative-content {
+  margin-bottom: 40px;
+  flex: 1;
+}
+
+.creative-paragraph {
+  font-size: 15px;
+  color: #34495E;
+  line-height: 1.7;
+  margin: 0 0 20px 0;
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.creative-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* ── SIGNATURE SECTION ── */
+.creative-signature-section {
+  margin-top: auto;
+}
+
+.creative-closing {
+  font-size: 16px;
+  color: #2C3E50;
+  margin: 0 0 20px 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+/* ── SIGNATURE ── */
+.creative-signature {
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+
+.generated-signature {
+  display: inline-block;
+  position: relative;
+  margin-left: 0;
+  margin-top: 10px;
+}
+
+.signature-svg {
+  display: block;
+  max-width: 140px;
+  height: auto;
+}
+
+.signature-initial {
+  animation: fadeInSignature 1.5s ease-in-out;
+}
+
+@keyframes fadeInSignature {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.text-signature {
+  font-family: 'Roboto Condensed', cursive;
+  font-size: 28px;
+  font-weight: 600;
+  color: #5A9BC7;
+  font-style: italic;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(90, 155, 199, 0.2);
+}
+
+.creative-printed-name {
+  font-size: 15px;
+  color: #2C3E50;
+  margin: 8px 0 0 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+/* Signature hover effects */
+.generated-signature:hover .signature-svg {
+  transform: scale(1.05) rotate(2deg);
+  transition: transform 0.3s ease;
+}
+
+/* ── RESPONSIVE DESIGN ── */
+@media (max-width: 1000px) {
+  .creative-wrapper {
+    padding: 16px;
+    background: #fff;
+  }
+  
+  .creative-page {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    flex-direction: column;
+  }
+  
+  .creative-dome {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    padding: 30px 25px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+    border-radius: 0 0 50px 50px;
+  }
+  
+  .creative-initials-section {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  
+  .creative-initials-container {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .creative-initials-text {
+    font-size: 28px;
+  }
+  
+  .creative-contact-section {
+    flex: 1;
+  }
+  
+  .creative-contact-title {
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .creative-contact-item {
+    margin-bottom: 15px;
+    padding: 10px 12px;
+  }
+  
+  .creative-main {
+    margin-left: 0;
+    padding: 30px 25px 40px;
+  }
+  
+  .creative-name {
+    font-size: 30px;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (max-width: 640px) {
+  .creative-dome {
+    padding: 25px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    border-radius: 0 0 40px 40px;
+  }
+  
+  .creative-initials-container {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .creative-initials-text {
+    font-size: 24px;
+  }
+  
+  .creative-contact-section {
+    width: 100%;
+  }
+  
+  .creative-contact-title {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+  
+  .creative-contact-item {
+    justify-content: center;
+    margin-bottom: 12px;
+    padding: 8px 10px;
+  }
+  
+  .creative-contact-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .creative-contact-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .creative-contact-text {
+    font-size: 12px;
+  }
+  
+  .creative-main {
+    padding: 25px 20px 30px;
+  }
+  
+  .creative-name {
+    font-size: 26px;
+    letter-spacing: 1px;
+  }
+  
+  .creative-paragraph {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* ── PRINT STYLES ── */
+@media print {
+  .creative-wrapper {
+    background: transparent;
+    padding: 0;
+    min-height: auto;
+  }
+
+  .creative-page {
+    box-shadow: none;
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    margin: 0;
+  }
+  
+  .creative-dome {
+    background: linear-gradient(135deg, #4A90B8 0%, #6BA3C7 50%, #8BB6D6 100%) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .creative-contact-title,
+  .creative-contact-text,
+  .creative-initials-text {
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .text-signature {
+    color: #5A9BC7 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }

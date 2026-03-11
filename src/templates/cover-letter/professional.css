@@ -1,4 +1,388 @@
-.professional .letter-header {
-  border-left: 8px solid #3b82f6;
-  padding-left: 1.5rem;
+/* Professional Cover Letter Template - Corporate Clean Design */
+
+@import url('https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;500;600;700&family=Arial:wght@400;500;600;700&display=swap');
+
+/* ── WRAPPER ── */
+.professional-wrapper {
+  font-family: 'Times New Roman', Georgia, serif;
+  background: transparent;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── PAGE ── */
+.professional-page {
+  background: #ffffff;
+  width: 8.5in;
+  min-height: 11in;
+  max-width: 8.5in;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* ── TOP BLUE BAR ── */
+.professional-top-bar {
+  background: #4A90E2;
+  height: 12px;
+  width: 100%;
+  margin: 0;
+}
+
+/* ── HEADER SECTION ── */
+.professional-header {
+  padding: 30px 50px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: white;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.professional-name-section {
+  flex: 1;
+}
+
+.professional-name {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2C3E50;
+  margin: 0 0 8px 0;
+  font-family: 'Times New Roman', Georgia, serif;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+
+.professional-title {
+  font-size: 16px;
+  font-weight: 400;
+  color: #7F8C8D;
+  margin: 0;
+  font-family: 'Times New Roman', Georgia, serif;
+  font-style: italic;
+}
+
+/* ── CONTACT SECTION ── */
+.professional-contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  margin-top: 5px;
+}
+
+.professional-date-item {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.professional-date-value {
+  font-size: 13px;
+  font-weight: 400;
+  color: #2C3E50;
+  font-family: 'Times New Roman', Georgia, serif;
+}
+
+.professional-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #2C3E50;
+  font-family: 'Times New Roman', Georgia, serif;
+}
+
+.professional-contact-icon {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #4A90E2;
+}
+
+.professional-contact-icon svg {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+}
+
+.professional-contact-label {
+  font-weight: 600;
+  color: #34495E;
+  min-width: 60px;
+  text-align: right;
+}
+
+.professional-contact-value {
+  font-weight: 400;
+  color: #2C3E50;
+}
+
+/* ── MAIN CONTENT ── */
+.professional-main {
+  flex: 1;
+  padding: 40px 50px 50px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── RECIPIENT SECTION ── */
+.professional-recipient-section {
+  margin-bottom: 30px;
+}
+
+.professional-recipient p {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  color: #2C3E50;
+  line-height: 1.4;
+  font-family: 'Times New Roman', Georgia, serif;
+  font-weight: 400;
+}
+
+/* ── SALUTATION ── */
+.professional-salutation {
+  font-size: 15px;
+  color: #2C3E50;
+  font-weight: 400;
+  margin: 0 0 25px 0;
+  font-family: 'Times New Roman', Georgia, serif;
+}
+
+/* ── CONTENT PARAGRAPHS ── */
+.professional-content {
+  margin-bottom: 40px;
+  flex: 1;
+}
+
+.professional-paragraph {
+  font-size: 15px;
+  color: #2C3E50;
+  line-height: 1.6;
+  margin: 0 0 18px 0;
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: 'Times New Roman', Georgia, serif;
+  font-weight: 400;
+}
+
+.professional-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* ── SIGNATURE SECTION ── */
+.professional-signature-section {
+  margin-top: auto;
+}
+
+.professional-closing {
+  font-size: 15px;
+  color: #2C3E50;
+  margin: 0 0 20px 0;
+  font-family: 'Times New Roman', Georgia, serif;
+  font-weight: 400;
+}
+
+/* ── SIGNATURE ── */
+.professional-signature {
+  margin: 0 0 15px 0;
+  line-height: 1.2;
+}
+
+.generated-signature {
+  display: inline-block;
+  position: relative;
+  margin-left: 0;
+  margin-top: 10px;
+}
+
+.signature-svg {
+  display: block;
+  max-width: 100px;
+  height: auto;
+}
+
+.signature-initial {
+  animation: fadeInSignature 1.2s ease-in-out;
+}
+
+@keyframes fadeInSignature {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.text-signature {
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2C3E50;
+  font-style: normal;
+  letter-spacing: 0.5px;
+}
+
+/* ── BOTTOM BLUE BAR ── */
+.professional-bottom-bar {
+  background: #4A90E2;
+  height: 12px;
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Signature hover effects */
+.generated-signature:hover .signature-svg {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+
+/* ── RESPONSIVE DESIGN ── */
+@media (max-width: 1000px) {
+  .professional-wrapper {
+    padding: 16px;
+    background: #fff;
+  }
+  
+  .professional-page {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+  }
+  
+  .professional-header {
+    padding: 25px 30px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .professional-contact-section {
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .professional-contact-item {
+    justify-content: flex-start;
+    gap: 5px;
+  }
+  
+  .professional-contact-icon {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .professional-contact-icon svg {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .professional-contact-label {
+    min-width: 50px;
+    text-align: left;
+  }
+  
+  .professional-main {
+    padding: 30px 30px 40px;
+  }
+  
+  .professional-name {
+    font-size: 28px;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: 640px) {
+  .professional-header {
+    padding: 20px 20px 15px;
+    gap: 15px;
+  }
+  
+  .professional-contact-section {
+    gap: 4px;
+  }
+  
+  .professional-contact-item {
+    font-size: 12px;
+    gap: 4px;
+  }
+  
+  .professional-contact-icon {
+    width: 11px;
+    height: 11px;
+  }
+  
+  .professional-contact-icon svg {
+    width: 9px;
+    height: 9px;
+  }
+  
+  .professional-contact-label {
+    min-width: 45px;
+  }
+  
+  .professional-main {
+    padding: 25px 20px 30px;
+  }
+  
+  .professional-name {
+    font-size: 24px;
+    letter-spacing: 0px;
+  }
+  
+  .professional-title {
+    font-size: 14px;
+  }
+  
+  .professional-paragraph {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+}
+
+/* ── PRINT STYLES ── */
+@media print {
+  .professional-wrapper {
+    background: transparent;
+    padding: 0;
+    min-height: auto;
+  }
+
+  .professional-page {
+    box-shadow: none;
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    margin: 0;
+  }
+  
+  .professional-top-bar,
+  .professional-bottom-bar {
+    background: #4A90E2 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .text-signature {
+    color: #2C3E50 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }
