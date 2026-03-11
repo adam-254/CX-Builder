@@ -1,10 +1,10 @@
 /* Executive Cover Letter Template - Bold & Professional */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700;900&family=Roboto:wght@300;400;500;600;700&display=swap');
 
 /* ── WRAPPER ── */
 .executive-wrapper {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   background: transparent;
   min-height: 100vh;
   display: flex;
@@ -30,12 +30,26 @@
   margin: 0;
 }
 
-/* ── GRADIENT HEADER ── */
+/* ── GRADIENT HEADER WITH SMOOTH CURVED BOTTOM ── */
 .executive-header {
-  background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   color: white;
-  padding: 25px 40px 20px;
+  padding: 25px 40px 40px;
   position: relative;
+  border-radius: 0 0 20px 20px;
+}
+
+.executive-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: white;
+  clip-path: path('M 0,50 C 5,55 10,60 20,60 Q 50,20 80,60 C 90,60 95,55 100,50 L 100,60 L 0,60 Z');
+  transform: scaleX(1);
+  border-radius: 0 0 20px 20px;
 }
 
 .executive-header-content {
@@ -53,8 +67,8 @@
   font-weight: 900;
   color: white;
   margin: 0 0 4px 0;
-  font-family: 'Inter', sans-serif;
-  letter-spacing: 1.5px;
+  font-family: 'Roboto Condensed', sans-serif;
+  letter-spacing: 2px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -63,8 +77,8 @@
   font-weight: 500;
   color: rgba(255, 255, 255, 0.95);
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  letter-spacing: 0.3px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.5px;
 }
 
 /* ── CONTACT GRID WITH CREATIVE ICONS ── */
@@ -149,14 +163,14 @@
   margin-bottom: 2px;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .executive-contact-value {
   font-size: 11px;
   font-weight: 500;
   color: white;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
   word-break: break-word;
   line-height: 1.2;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -165,7 +179,11 @@
 /* ── MAIN CONTENT ── */
 .executive-main {
   flex: 1;
-  padding: 35px 40px 50px;
+  padding: 40px 40px 50px;
+  margin-top: -40px;
+  background: white;
+  position: relative;
+  z-index: 2;
 }
 
 /* ── RECIPIENT SECTION ── */
@@ -178,7 +196,7 @@
   font-size: 15px;
   color: #374151;
   line-height: 1.4;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
 
@@ -191,7 +209,7 @@
   font-size: 15px;
   color: #6B7280;
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
 
@@ -201,7 +219,7 @@
   color: #1f2937;
   font-weight: 700;
   margin: 0 0 30px 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* ── SALUTATION ── */
@@ -210,7 +228,7 @@
   color: #111827;
   font-weight: 600;
   margin: 0 0 30px 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* ── CONTENT PARAGRAPHS ── */
@@ -225,7 +243,7 @@
   margin: 0 0 24px 0;
   text-align: justify;
   text-justify: inter-word;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
 
@@ -242,7 +260,7 @@
   font-size: 16px;
   color: #111827;
   margin: 0 0 20px 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 600;
 }
 
@@ -281,7 +299,7 @@
 }
 
 .text-signature {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
   font-weight: 900;
   color: #1f2937;
@@ -309,7 +327,13 @@
   }
   
   .executive-header {
-    padding: 20px 24px 16px;
+    padding: 20px 24px 35px;
+    border-radius: 0 0 15px 15px;
+  }
+  
+  .executive-header::after {
+    height: 45px;
+    clip-path: path('M 0,38 C 4,42 8,45 15,45 Q 50,15 85,45 C 92,45 96,42 100,38 L 100,45 L 0,45 Z');
   }
   
   .executive-name {
@@ -344,13 +368,20 @@
   }
   
   .executive-main {
-    padding: 28px 24px 40px;
+    padding: 30px 24px 40px;
+    margin-top: -30px;
   }
 }
 
 @media (max-width: 640px) {
   .executive-header {
-    padding: 18px 20px 14px;
+    padding: 18px 20px 30px;
+    border-radius: 0 0 12px 12px;
+  }
+  
+  .executive-header::after {
+    height: 35px;
+    clip-path: path('M 0,28 C 3,31 6,35 12,35 Q 50,12 88,35 C 94,35 97,31 100,28 L 100,35 L 0,35 Z');
   }
   
   .executive-name {
@@ -393,7 +424,8 @@
   }
   
   .executive-main {
-    padding: 20px 20px 30px;
+    padding: 38px 20px 30px;
+    margin-top: -25px;
   }
   
   .executive-paragraph {
@@ -419,10 +451,17 @@
   }
   
   .executive-header {
-    background: linear-gradient(135deg, #ec4899 0%, #f97316 100%) !important;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%) !important;
     color: white !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+  
+  .executive-header::after {
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    clip-path: path('M 0,50 C 5,55 10,60 20,60 Q 50,20 80,60 C 90,60 95,55 100,50 L 100,60 L 0,60 Z') !important;
   }
   
   .executive-name {
