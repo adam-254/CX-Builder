@@ -1,14 +1,457 @@
-.executive .letter-header {
-  background: #1f2937;
-  color: white;
-  padding: 2rem;
-  margin: -2rem -2rem 2rem -2rem;
+/* Executive Cover Letter Template - Bold & Professional */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* ── WRAPPER ── */
+.executive-wrapper {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: transparent;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.executive .letter-header h1 {
-  color: white;
+/* ── PAGE ── */
+.executive-page {
+  background: #ffffff;
+  width: 8.5in;
+  min-height: 11in;
+  max-width: 8.5in;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.executive .letter-header .email {
-  color: #d1d5db;
+/* ── GRADIENT HEADER ── */
+.executive-header {
+  background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
+  color: white;
+  padding: 25px 40px 20px;
+  position: relative;
+}
+
+.executive-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.executive-name-section {
+  text-align: right;
+}
+
+.executive-name {
+  font-size: 28px;
+  font-weight: 900;
+  color: white;
+  margin: 0 0 4px 0;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.executive-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
+}
+
+/* ── CONTACT GRID WITH CREATIVE ICONS ── */
+.executive-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+  padding: 18px 0 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.executive-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.executive-contact-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.executive-contact-item:hover::before {
+  left: 100%;
+}
+
+.executive-contact-item:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.executive-contact-icon {
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.executive-contact-icon svg {
+  width: 14px;
+  height: 14px;
+  color: white;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.executive-contact-item:hover .executive-contact-icon {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.executive-contact-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.executive-contact-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-family: 'Inter', sans-serif;
+}
+
+.executive-contact-value {
+  font-size: 11px;
+  font-weight: 500;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  word-break: break-word;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ── MAIN CONTENT ── */
+.executive-main {
+  flex: 1;
+  padding: 35px 40px 50px;
+}
+
+/* ── RECIPIENT SECTION ── */
+.executive-recipient-section {
+  margin-bottom: 30px;
+}
+
+.executive-recipient p {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.4;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+/* ── DATE SECTION ── */
+.executive-date-section {
+  margin-bottom: 30px;
+}
+
+.executive-date {
+  font-size: 15px;
+  color: #6B7280;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+/* ── SUBJECT LINE ── */
+.executive-subject {
+  font-size: 16px;
+  color: #1f2937;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── SALUTATION ── */
+.executive-salutation {
+  font-size: 16px;
+  color: #111827;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── CONTENT PARAGRAPHS ── */
+.executive-content {
+  margin-bottom: 50px;
+}
+
+.executive-paragraph {
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.7;
+  margin: 0 0 24px 0;
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.executive-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* ── SIGNATURE SECTION ── */
+.executive-signature-section {
+  margin-top: auto;
+}
+
+.executive-closing {
+  font-size: 16px;
+  color: #111827;
+  margin: 0 0 20px 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+/* ── SIGNATURE ── */
+.executive-signature {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.generated-signature {
+  display: inline-block;
+  position: relative;
+  margin-left: 0;
+  margin-top: 10px;
+}
+
+.signature-svg {
+  display: block;
+  max-width: 120px;
+  height: auto;
+}
+
+.signature-initial {
+  animation: fadeInSignature 1.5s ease-in-out;
+}
+
+@keyframes fadeInSignature {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.text-signature {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: #1f2937;
+  font-style: normal;
+  letter-spacing: 1px;
+}
+
+/* Signature hover effects */
+.generated-signature:hover .signature-svg {
+  transform: scale(1.03);
+  transition: transform 0.2s ease;
+}
+
+/* ── RESPONSIVE DESIGN ── */
+@media (max-width: 1000px) {
+  .executive-wrapper {
+    padding: 16px;
+    background: #fff;
+  }
+  
+  .executive-page {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+  }
+  
+  .executive-header {
+    padding: 20px 24px 16px;
+  }
+  
+  .executive-name {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .executive-name-section {
+    text-align: center;
+  }
+  
+  .executive-contact-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+    padding: 15px 0 6px;
+  }
+  
+  .executive-contact-item {
+    padding: 6px 10px;
+    gap: 6px;
+  }
+  
+  .executive-contact-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .executive-contact-icon svg {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .executive-main {
+    padding: 28px 24px 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .executive-header {
+    padding: 18px 20px 14px;
+  }
+  
+  .executive-name {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+  
+  .executive-title {
+    font-size: 12px;
+  }
+  
+  .executive-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 12px 0 4px;
+  }
+  
+  .executive-contact-item {
+    padding: 5px 8px;
+    gap: 6px;
+  }
+  
+  .executive-contact-icon {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .executive-contact-icon svg {
+    width: 11px;
+    height: 11px;
+  }
+  
+  .executive-contact-label {
+    font-size: 8px;
+  }
+  
+  .executive-contact-value {
+    font-size: 10px;
+  }
+  
+  .executive-main {
+    padding: 20px 20px 30px;
+  }
+  
+  .executive-paragraph {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* ── PRINT STYLES ── */
+@media print {
+  .executive-wrapper {
+    background: transparent;
+    padding: 0;
+    min-height: auto;
+  }
+
+  .executive-page {
+    box-shadow: none;
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    margin: 0;
+  }
+  
+  .executive-header {
+    background: linear-gradient(135deg, #ec4899 0%, #f97316 100%) !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .executive-name {
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .executive-title {
+    color: rgba(255, 255, 255, 0.95) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .executive-contact-label {
+    color: rgba(255, 255, 255, 0.8) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .executive-contact-value {
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .text-signature {
+    color: #1f2937 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }
