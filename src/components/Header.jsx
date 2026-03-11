@@ -1,4 +1,5 @@
 import './Header.css'
+import VisitorCounter from './VisitorCounter'
 
 function Header({ onMenuToggle, onNavigate, currentPage }) {
   return (
@@ -13,6 +14,7 @@ function Header({ onMenuToggle, onNavigate, currentPage }) {
         <h1>CX Builder</h1>
       </div>
       <div className="header-right">
+        <VisitorCounter />
         <button 
           className={`btn-primary ${currentPage === 'builder' ? 'active' : ''}`}
           onClick={() => onNavigate('builder')}
