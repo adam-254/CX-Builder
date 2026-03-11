@@ -19,11 +19,12 @@ export const exportToPDF = async (elementId, filename = 'document', pages = []) 
       throw new Error('No pages found to export')
     }
 
-    // Create PDF document
+    // Create PDF document with compression
     const pdf = new jsPDF({
       orientation: 'portrait',
       unit: 'mm',
-      format: 'a4'
+      format: 'a4',
+      compress: true // Enable PDF compression
     })
 
     // A4 dimensions in mm
@@ -37,16 +38,19 @@ export const exportToPDF = async (elementId, filename = 'document', pages = []) 
       const originalStyles = prepareElementForPDF(pageElement)
       
       try {
-        // Capture the page as canvas
+        // Capture the page as canvas with optimized settings
         const canvas = await html2canvas(pageElement, {
-          scale: 2, // Higher scale for better quality
+          scale: 1.5, // Reduced from 2 for smaller file size
           useCORS: true,
           allowTaint: true,
           backgroundColor: '#ffffff',
           width: pageElement.scrollWidth,
           height: pageElement.scrollHeight,
           windowWidth: 1200,
-          windowHeight: 1600
+          windowHeight: 1600,
+          logging: false, // Disable logging for performance
+          imageTimeout: 15000,
+          removeContainer: true
         })
 
         // Calculate dimensions to fit A4
@@ -58,9 +62,9 @@ export const exportToPDF = async (elementId, filename = 'document', pages = []) 
           pdf.addPage()
         }
         
-        // Add image to PDF
-        const imgData = canvas.toDataURL('image/png')
-        pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, Math.min(imgHeight, pageHeight))
+        // Convert to JPEG with compression for smaller file size
+        const imgData = canvas.toDataURL('image/jpeg', 0.85) // 85% quality JPEG
+        pdf.addImage(imgData, 'JPEG', 0, 0, imgWidth, Math.min(imgHeight, pageHeight))
         
       } finally {
         // Restore original styles
@@ -275,11 +279,12 @@ export const exportFromHistoryToPDF = async (formData, template, docType, pages 
     
     const root = ReactDOM.createRoot(tempContainer)
     
-    // Create PDF document
+    // Create PDF document with compression
     const pdf = new jsPDF({
       orientation: 'portrait',
       unit: 'mm',
-      format: 'a4'
+      format: 'a4',
+      compress: true // Enable PDF compression
     })
 
     const pageWidth = 210
@@ -301,14 +306,17 @@ export const exportFromHistoryToPDF = async (formData, template, docType, pages 
       await new Promise(resolve => setTimeout(resolve, 500))
       
       try {
-        // Capture the page as canvas
+        // Capture the page as canvas with optimized settings
         const canvas = await html2canvas(tempContainer, {
-          scale: 2,
+          scale: 1.5, // Reduced for smaller file size
           useCORS: true,
           allowTaint: true,
           backgroundColor: '#ffffff',
           width: tempContainer.scrollWidth,
-          height: tempContainer.scrollHeight
+          height: tempContainer.scrollHeight,
+          logging: false,
+          imageTimeout: 15000,
+          removeContainer: true
         })
 
         // Calculate dimensions to fit A4
@@ -320,9 +328,9 @@ export const exportFromHistoryToPDF = async (formData, template, docType, pages 
           pdf.addPage()
         }
         
-        // Add image to PDF
-        const imgData = canvas.toDataURL('image/png')
-        pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, Math.min(imgHeight, pageHeight))
+        // Convert to JPEG with compression
+        const imgData = canvas.toDataURL('image/jpeg', 0.85)
+        pdf.addImage(imgData, 'JPEG', 0, 0, imgWidth, Math.min(imgHeight, pageHeight))
         
       } catch (error) {
         console.error('Error rendering page:', error)
@@ -369,24 +377,29 @@ export const exportSinglePageToPDF = async (elementSelector, filename = 'documen
     
     try {
       const canvas = await html2canvas(element, {
-        scale: 2,
+        scale: 1.5, // Reduced for smaller file size
         useCORS: true,
         allowTaint: true,
-        backgroundColor: '#ffffff'
+        backgroundColor: '#ffffff',
+        logging: false,
+        imageTimeout: 15000,
+        removeContainer: true
       })
       
       const pdf = new jsPDF({
         orientation: 'portrait',
         unit: 'mm',
-        format: 'a4'
+        format: 'a4',
+        compress: true // Enable PDF compression
       })
       
       const pageWidth = 210
       const imgWidth = pageWidth
       const imgHeight = (canvas.height * pageWidth) / canvas.width
       
-      const imgData = canvas.toDataURL('image/png')
-      pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight)
+      // Use JPEG with compression
+      const imgData = canvas.toDataURL('image/jpeg', 0.85)
+      pdf.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight)
       pdf.save(`${filename}.pdf`)
       
       hideLoadingToast(loadingToast)

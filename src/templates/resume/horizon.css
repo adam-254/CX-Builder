@@ -281,45 +281,159 @@
   margin-bottom: 2px;
 }
 
-/* Enhanced Skills Grid */
-.horizon-skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
-  margin-top: 8px;
-}
-
-.horizon-skill-item {
+/* Creative Skills Showcase Design - Compact & Fluid */
+.horizon-skills-showcase {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
+  margin-top: 12px;
 }
 
-.horizon-skill-name {
-  font-size: 12px;
-  font-weight: 600;
-  color: #2c2c2c;
+.horizon-skill-showcase-item {
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.04) 0%, rgba(184, 134, 11, 0.01) 100%);
+  border: 1px solid rgba(184, 134, 11, 0.12);
+  border-radius: 6px;
+  padding: 8px 12px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
 }
 
-.horizon-skill-level {
+.horizon-skill-showcase-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, #b8860b 0%, #d4a574 100%);
+  opacity: 0.6;
+}
+
+.horizon-skill-header {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  margin-bottom: 6px;
 }
 
-.horizon-skill-bar {
-  flex: 1;
-  height: 4px;
-  background: #e5e5e5;
-  border-radius: 2px;
-  overflow: hidden;
+.horizon-skill-icon {
+  font-size: 14px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(184, 134, 11, 0.08);
+  border-radius: 4px;
+  flex-shrink: 0;
 }
 
-.horizon-skill-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #b8860b, #d4a574);
-  border-radius: 2px;
-  transition: width 0.3s ease;
+.horizon-skill-category-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+.horizon-skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  line-height: 1.2;
+}
+
+.horizon-skill-tag {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(184, 134, 11, 0.15);
+  color: #333;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  display: inline-block;
+}
+
+/* Compact Hover Effects */
+@media screen {
+  .horizon-skill-showcase-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(184, 134, 11, 0.1);
+    border-color: rgba(184, 134, 11, 0.25);
+  }
+  
+  .horizon-skill-showcase-item:hover .horizon-skill-icon {
+    background: rgba(184, 134, 11, 0.15);
+    transform: scale(1.05);
+  }
+  
+  .horizon-skill-tag:hover {
+    background: rgba(184, 134, 11, 0.08);
+    border-color: rgba(184, 134, 11, 0.3);
+    transform: scale(1.02);
+  }
+}
+
+/* Ultra-Compact Alternative Layout */
+.horizon-skills-showcase.compact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 6px;
+}
+
+.horizon-skills-showcase.compact .horizon-skill-showcase-item {
+  padding: 6px 10px;
+}
+
+.horizon-skills-showcase.compact .horizon-skill-header {
+  margin-bottom: 4px;
+}
+
+.horizon-skills-showcase.compact .horizon-skill-icon {
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+}
+
+.horizon-skills-showcase.compact .horizon-skill-category-title {
+  font-size: 10.5px;
+}
+
+.horizon-skills-showcase.compact .horizon-skill-tags {
+  gap: 3px;
+}
+
+.horizon-skills-showcase.compact .horizon-skill-tag {
+  font-size: 9px;
+  padding: 1px 4px;
+  border-radius: 6px;
+}
+
+/* Responsive Design for Skills */
+@media (max-width: 768px) {
+  .horizon-skills-showcase {
+    gap: 6px;
+  }
+  
+  .horizon-skill-showcase-item {
+    padding: 6px 10px;
+  }
+  
+  .horizon-skill-header {
+    margin-bottom: 4px;
+  }
+  
+  .horizon-skill-tags {
+    gap: 3px;
+  }
+  
+  .horizon-skill-tag {
+    font-size: 9px;
+    padding: 1px 4px;
+  }
 }
 
 /* Certifications Grid */
@@ -490,10 +604,6 @@
 
 /* Hover Effects for Digital Viewing */
 @media screen {
-  .horizon-skill-item:hover .horizon-skill-fill {
-    background: linear-gradient(90deg, #d4a574, #b8860b);
-  }
-  
   .horizon-cert-item:hover {
     background: rgba(184, 134, 11, 0.1);
     transform: translateY(-1px);
@@ -505,6 +615,8 @@
     transform: translateY(-1px);
     transition: all 0.2s ease;
   }
+  
+  /* Skills showcase hover effects are defined above in the skills section */
 }
 
 /* Print Optimizations */
@@ -519,12 +631,6 @@
   
   .metric-highlight {
     background: rgba(184, 134, 11, 0.2) !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-  
-  .horizon-skill-fill {
-    background: #b8860b !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }

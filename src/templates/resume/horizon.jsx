@@ -29,6 +29,12 @@ function HorizonTemplate({ data, pageNumber, sectionsToShow }) {
   const showSkills = !sectionsToShow || sectionsToShow.includes('skills');
   const showExperience = !sectionsToShow || sectionsToShow.includes('experience');
   const showEducation = !sectionsToShow || sectionsToShow.includes('education');
+  const showCertifications = !sectionsToShow || sectionsToShow.includes('certifications');
+  const showProjects = !sectionsToShow || sectionsToShow.includes('projects');
+  const showVolunteer = !sectionsToShow || sectionsToShow.includes('volunteer');
+  const showLanguages = !sectionsToShow || sectionsToShow.includes('languages');
+  const showInterests = !sectionsToShow || sectionsToShow.includes('interests');
+  const showReferences = !sectionsToShow || sectionsToShow.includes('references');
 
   return (
     <div className="resume-template horizon">
@@ -101,26 +107,43 @@ function HorizonTemplate({ data, pageNumber, sectionsToShow }) {
         </section>
       )}
 
-      {/* CORE COMPETENCIES - ATS Friendly Skills */}
+      {/* CORE COMPETENCIES - Compact & Fluid Design */}
       {showSkills && data.skills && data.skills.length > 0 && (
         <section className="horizon-section">
           <h2 className="horizon-section-title">CORE COMPETENCIES</h2>
-          <div className="horizon-skills-grid">
-            {data.skills.map((skill, index) => (
-              <div key={index} className="horizon-skill-item">
-                <span className="horizon-skill-name">{skill.skills || skill.category}</span>
-                {skill.level && (
-                  <div className="horizon-skill-level">
-                    <div className="horizon-skill-bar">
-                      <div 
-                        className="horizon-skill-fill" 
-                        style={{width: `${skill.level || 80}%`}}
-                      ></div>
-                    </div>
+          <div className={`horizon-skills-showcase ${data.skills.length > 4 ? 'compact' : ''}`}>
+            {data.skills.map((skill, index) => {
+              // Get appropriate icon based on category
+              const getSkillIcon = (category) => {
+                const cat = category.toLowerCase();
+                if (cat.includes('programming') || cat.includes('language')) return '💻';
+                if (cat.includes('frontend') || cat.includes('ui') || cat.includes('design')) return '🎨';
+                if (cat.includes('backend') || cat.includes('server') || cat.includes('api')) return '⚙️';
+                if (cat.includes('database') || cat.includes('data')) return '🗄️';
+                if (cat.includes('tool') || cat.includes('platform') || cat.includes('devops')) return '🛠️';
+                if (cat.includes('mobile') || cat.includes('app')) return '📱';
+                if (cat.includes('cloud') || cat.includes('aws') || cat.includes('azure')) return '☁️';
+                if (cat.includes('testing') || cat.includes('qa')) return '🧪';
+                if (cat.includes('security') || cat.includes('auth')) return '🔒';
+                return '⭐'; // Default icon
+              };
+
+              return (
+                <div key={index} className="horizon-skill-showcase-item">
+                  <div className="horizon-skill-header">
+                    <span className="horizon-skill-icon">{getSkillIcon(skill.category)}</span>
+                    <h4 className="horizon-skill-category-title">{skill.category}</h4>
                   </div>
-                )}
-              </div>
-            ))}
+                  <div className="horizon-skill-tags">
+                    {skill.skills.split(',').map((skillItem, skillIndex) => (
+                      <span key={skillIndex} className="horizon-skill-tag">
+                        {skillItem.trim()}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </section>
       )}
@@ -192,7 +215,7 @@ function HorizonTemplate({ data, pageNumber, sectionsToShow }) {
       )}
 
       {/* CERTIFICATIONS & LICENSES */}
-      {data.certifications && data.certifications.length > 0 && (
+      {showCertifications && data.certifications && data.certifications.length > 0 && (
         <section className="horizon-section">
           <h2 className="horizon-section-title">CERTIFICATIONS & LICENSES</h2>
           <div className="horizon-cert-grid">
@@ -209,7 +232,7 @@ function HorizonTemplate({ data, pageNumber, sectionsToShow }) {
       )}
 
       {/* KEY PROJECTS */}
-      {data.projects && data.projects.length > 0 && (
+      {showProjects && data.projects && data.projects.length > 0 && (
         <section className="horizon-section">
           <h2 className="horizon-section-title">KEY PROJECTS</h2>
           <div className="horizon-timeline">
@@ -246,7 +269,7 @@ function HorizonTemplate({ data, pageNumber, sectionsToShow }) {
       {/* ADDITIONAL QUALIFICATIONS */}
       <div className="horizon-additional-section">
         {/* LANGUAGES */}
-        {data.languages && data.languages.length > 0 && (
+        {showLanguages && data.languages && data.languages.length > 0 && (
           <div className="horizon-additional-item">
             <h3 className="horizon-additional-title">LANGUAGES</h3>
             <div className="horizon-languages-list">
@@ -260,7 +283,7 @@ function HorizonTemplate({ data, pageNumber, sectionsToShow }) {
         )}
 
         {/* INTERESTS */}
-        {data.interests && data.interests.length > 0 && (
+        {showInterests && data.interests && data.interests.length > 0 && (
           <div className="horizon-additional-item">
             <h3 className="horizon-additional-title">PROFESSIONAL INTERESTS</h3>
             <p className="horizon-interests-text">
@@ -271,7 +294,7 @@ function HorizonTemplate({ data, pageNumber, sectionsToShow }) {
       </div>
 
       {/* REFERENCES */}
-      {data.references && data.references.length > 0 && (
+      {showReferences && data.references && data.references.length > 0 && (
         <section className="horizon-section">
           <h2 className="horizon-section-title">PROFESSIONAL REFERENCES</h2>
           {data.references.some(ref => ref.availableUponRequest) ? (
