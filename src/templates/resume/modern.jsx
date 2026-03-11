@@ -55,6 +55,12 @@ function ModernTemplate({ data, pageNumber, sectionsToShow }) {
                 <div className="contact-value">{data.website}</div>
               </div>
             )}
+            {data.github && (
+              <div className="contact-item">
+                <div className="contact-label">GITHUB</div>
+                <div className="contact-value">{data.github}</div>
+              </div>
+            )}
           </div>
         </div>
       )}

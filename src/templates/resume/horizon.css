@@ -1,147 +1,531 @@
-.horizon .resume-header {
-  background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%);
-  color: white;
-  padding: 2rem;
-  margin: -2rem -2rem 2rem -2rem;
+/* Horizon Resume Template - Exact match to provided image */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+.resume-template.horizon {
+  font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+  color: #2c2c2c;
+  background: #ffffff;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 52px 36px 52px;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 1.5;
+  min-height: 100vh;
 }
 
-.horizon .resume-header h1 {
-  color: white;
-}
-
-.horizon .resume-header .email {
-  color: #bfdbfe;
-}
-
-.resume-template {
-  width: 8.5in;
-  min-height: 11in;
-  background: white;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-  padding: 2rem;
-  color: #1f2937;
-}
-
-.contact-info {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
-}
-
-.contact-info span::after {
-  content: '•';
-  margin-left: 1rem;
-}
-
-.contact-info span:last-child::after {
-  content: '';
-  margin: 0;
-}
-
-.resume-section {
-  margin-bottom: 2rem;
-}
-
-.resume-section h2 {
-  font-size: 1.5rem;
-  color: #1f2937;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #3b82f6;
-}
-
-.entry {
-  margin-bottom: 1.5rem;
-}
-
-.entry-header {
+/* ── HEADER ── */
+.horizon-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0.5rem;
+  margin-bottom: 28px;
 }
 
-.entry h3 {
-  font-size: 1.125rem;
-  color: #1f2937;
-  margin-bottom: 0.25rem;
+.horizon-header-left {
+  flex: 1;
+  padding-right: 32px;
 }
 
-.company {
-  color: #4b5563;
-  font-size: 1rem;
-  font-weight: 500;
+.horizon-name {
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #1a1a1a;
+  margin: 0 0 4px 0;
+  text-transform: uppercase;
+  line-height: 1.1;
 }
 
-.entry-date {
-  color: #6b7280;
-  font-size: 0.875rem;
+.horizon-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #b8860b;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.2px;
+}
+
+.horizon-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.horizon-contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.horizon-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #333;
+  line-height: 1.4;
+  min-width: 0;
+}
+
+.horizon-contact-icon {
+  font-size: 14px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #b8860b;
+  font-weight: bold;
+  background: rgba(184, 134, 11, 0.1);
+  border-radius: 3px;
+}
+
+.horizon-contact-text {
+  font-size: 12px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Avatar circle */
+.horizon-avatar {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background-color: #b8860b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.horizon-avatar-initials {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ── SECTIONS ── */
+.horizon-section {
+  margin-bottom: 20px;
+}
+
+.horizon-section-title {
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* ── SUMMARY ── */
+.horizon-summary-text {
+  margin: 0;
+  font-size: 13px;
+  color: #3a3a3a;
+  line-height: 1.6;
+}
+
+/* ── SKILLS ── */
+.horizon-skills-text {
+  margin: 0;
+  font-size: 13px;
+  color: #3a3a3a;
+  line-height: 1.6;
+}
+
+/* ── TIMELINE (Experience & Education) ── */
+.horizon-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.horizon-timeline-item {
+  display: grid;
+  grid-template-columns: 170px 18px 1fr;
+  align-items: start;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+/* Left column: dates + location */
+.horizon-timeline-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 12px;
+  padding-top: 2px;
+  gap: 2px;
+}
+
+.horizon-date {
+  font-size: 12px;
+  font-weight: 700;
+  color: #2c2c2c;
   white-space: nowrap;
 }
 
-.location {
-  color: #6b7280;
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
+.horizon-job-location {
+  font-size: 11.5px;
+  color: #777;
+  white-space: nowrap;
 }
 
-.description {
-  color: #4b5563;
-  line-height: 1.6;
-  margin-top: 0.5rem;
+/* Center dot */
+.horizon-timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #b8860b;
+  margin-top: 5px;
+  justify-self: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }
 
-.skill-group {
-  margin-bottom: 0.75rem;
-  color: #4b5563;
-  line-height: 1.6;
+/* Vertical connecting line between dots */
+.horizon-timeline-item:not(:last-child) .horizon-timeline-dot::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background-color: #e0e0e0;
+  /* height spans to next dot — approximate */
+  height: 100px;
 }
 
-.skill-group strong {
-  color: #1f2937;
+/* Right column: content */
+.horizon-timeline-right {
+  padding-left: 12px;
 }
 
-.project-url {
-  color: #3b82f6;
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
+.horizon-job-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 2px 0;
 }
 
-.languages-list {
+.horizon-company {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #b8860b;
+  margin: 0 0 6px 0;
+}
+
+.horizon-bullets {
+  margin: 4px 0 0 0;
+  padding-left: 16px;
+  list-style: disc;
+}
+
+.horizon-bullets li {
+  font-size: 12.5px;
+  color: #3a3a3a;
+  line-height: 1.55;
+  margin-bottom: 3px;
+}
+
+
+
+/* ── PRINT / PDF ── */
+@media print {
+  .resume-template.horizon {
+    padding: 32px 40px;
+    max-width: 100%;
+  }
+}
+
+/* ── ATS & STANDOUT ENHANCEMENTS ── */
+
+/* Metric Highlighting */
+.metric-highlight {
+  color: #b8860b;
+  font-weight: 700;
+  background: rgba(184, 134, 11, 0.1);
+  padding: 1px 3px;
+  border-radius: 2px;
+}
+
+/* Current Job Badge */
+.horizon-current-badge {
+  background: #22c55e;
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  margin-left: 8px;
+}
+
+/* Job Header with Badge */
+.horizon-job-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+/* Enhanced Skills Grid */
+.horizon-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.horizon-skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.horizon-skill-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+.horizon-skill-level {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.horizon-skill-bar {
+  flex: 1;
+  height: 4px;
+  background: #e5e5e5;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.horizon-skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #b8860b, #d4a574);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* Certifications Grid */
+.horizon-cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.horizon-cert-item {
+  background: rgba(184, 134, 11, 0.05);
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 3px solid #b8860b;
+}
+
+.horizon-cert-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0 0 4px 0;
+}
+
+.horizon-cert-issuer {
+  font-size: 11px;
+  color: #b8860b;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.horizon-cert-date {
+  font-size: 10px;
+  color: #777;
+}
+
+.horizon-cert-badge {
+  background: #10b981;
+  color: white;
+  font-size: 8px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-left: 8px;
+}
+
+/* Project Enhancements */
+.horizon-project-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.horizon-project-link {
+  background: #3b82f6;
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* GPA Highlighting */
+.horizon-gpa {
+  font-size: 11px;
+  color: #666;
+  margin: 4px 0 0 0;
+}
+
+/* Additional Qualifications Section */
+.horizon-additional-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.horizon-additional-item {
+  background: rgba(184, 134, 11, 0.03);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.horizon-additional-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+}
+
+.horizon-languages-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 12px;
 }
 
-.language-item {
-  color: #4b5563;
+.horizon-language-item {
+  font-size: 12px;
+  color: #333;
+  background: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
 }
 
-.interests-list {
+.horizon-proficiency {
+  color: #b8860b;
+  font-weight: 600;
+}
+
+.horizon-interests-text {
+  font-size: 12px;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* References Grid */
+.horizon-references-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.horizon-reference-item {
+  background: rgba(184, 134, 11, 0.05);
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 3px solid #b8860b;
+}
+
+.horizon-reference-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0 0 2px 0;
+}
+
+.horizon-reference-title {
+  font-size: 11px;
+  color: #b8860b;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+}
+
+.horizon-reference-company {
+  font-size: 11px;
+  color: #666;
+  margin: 0 0 6px 0;
+}
+
+.horizon-reference-contact {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.interest-item {
-  color: #4b5563;
-  font-size: 0.9375rem;
-  font-weight: 400;
+.horizon-reference-contact span {
+  font-size: 10px;
+  color: #777;
 }
 
-.summary-text {
-  color: #374151;
-  line-height: 1.7;
-  font-size: 0.9375rem;
-  font-weight: 400;
+/* Hover Effects for Digital Viewing */
+@media screen {
+  .horizon-skill-item:hover .horizon-skill-fill {
+    background: linear-gradient(90deg, #d4a574, #b8860b);
+  }
+  
+  .horizon-cert-item:hover {
+    background: rgba(184, 134, 11, 0.1);
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+  }
+  
+  .horizon-reference-item:hover {
+    background: rgba(184, 134, 11, 0.1);
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+  }
 }
 
-.available-upon-request {
-  color: #4b5563;
-  font-size: 0.9375rem;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.7;
+/* Print Optimizations */
+@media print {
+  .horizon-current-badge,
+  .horizon-cert-badge,
+  .horizon-project-link {
+    background: #666 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .metric-highlight {
+    background: rgba(184, 134, 11, 0.2) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .horizon-skill-fill {
+    background: #b8860b !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }

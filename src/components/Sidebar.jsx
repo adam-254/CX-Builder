@@ -99,6 +99,12 @@ function Sidebar({ formData, setFormData, template, setTemplate, docType, setDoc
           value={formData.website || ''}
           onChange={(e) => setFormData({ ...formData, website: e.target.value })}
         />
+        <input
+          type="url"
+          placeholder="GitHub (optional)"
+          value={formData.github || ''}
+          onChange={(e) => setFormData({ ...formData, github: e.target.value })}
+        />
         <textarea
           placeholder="Professional Summary"
           rows="4"

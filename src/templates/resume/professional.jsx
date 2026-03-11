@@ -78,6 +78,12 @@ function ProfessionalTemplate({ data, pageNumber, sectionsToShow }) {
                 {data.website}
               </div>
             )}
+            {data.github && (
+              <div className="contact-item">
+                <span className="contact-icon">⚡</span>
+                {data.github}
+              </div>
+            )}
             {data.linkedin && (
               <div className="contact-item">
                 <span className="contact-icon">📍</span>
