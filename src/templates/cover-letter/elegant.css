@@ -1,12 +1,245 @@
-.elegant .letter-header {
-  text-align: center;
-  border-top: 3px solid #d4af37;
-  border-bottom: 3px solid #d4af37;
-  padding: 1.5rem 0;
+@import url('https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@300;400;500;600;700;800&display=swap');
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.elegant-cover-letter {
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 15px;
+  color: #444;
+  background: #fff;
+  width: 794px;          /* A4 @ 96dpi */
+  min-height: 1123px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
 }
 
-.elegant .letter-header h1 {
-  font-family: Georgia, serif;
-  font-weight: 400;
-  letter-spacing: 0.1em;
+/* ── Warm gradient background blob (bottom-right) ── */
+.elegant-cover-letter::before {
+  content: '';
+  position: absolute;
+  bottom: -120px;
+  right: -120px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(255, 200, 100, 0.25) 0%, rgba(255, 160, 60, 0.10) 50%, transparent 75%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
 }
+
+/* ── Header ── */
+.ecl-header {
+  display: flex;
+  align-items: stretch;
+  min-height: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Photo block */
+.ecl-photo-block {
+  width: 110px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.ecl-photo-block img,
+.ecl-initials-avatar {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.ecl-initials-avatar {
+  background: linear-gradient(135deg, #f0a500 0%, #e07b00 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+/* Name + title block */
+.ecl-name-block {
+  flex: 1;
+  padding: 16px 20px 12px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+}
+
+.ecl-name {
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #333;
+  line-height: 1.1;
+}
+
+.ecl-name strong {
+  font-weight: 800;
+  color: #e8910a;
+}
+
+.ecl-job-title {
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #555;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+  text-transform: none;
+}
+
+/* Contact sidebar */
+.ecl-contact-sidebar {
+  background: #e8910a;
+  width: 200px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 14px;
+  gap: 6px;
+}
+
+.ecl-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 13px;
+  font-family: 'Times New Roman', Georgia, serif;
+  line-height: 1.3;
+}
+
+.ecl-contact-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ecl-contact-icon svg {
+  width: 12px;
+  height: 12px;
+  fill: #fff;
+}
+
+.ecl-contact-text {
+  word-break: break-all;
+}
+
+/* ── Body ── */
+.ecl-body {
+  padding: 32px 38px 36px 38px;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Recipient block */
+.ecl-recipient {
+  margin-bottom: 20px;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Salutation */
+.ecl-salutation {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 14px;
+}
+
+/* Subject Line */
+.ecl-subject {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Paragraphs */
+.ecl-paragraph {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 12px;
+  line-height: 1.7;
+  flex: 1;
+}
+
+/* Bullet list */
+.ecl-bullet-list {
+  list-style: disc;
+  padding-left: 22px;
+  margin: 4px 0 14px;
+}
+
+.ecl-bullet-list li {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 4px;
+  line-height: 1.7;
+}
+
+/* Closing */
+.ecl-closing {
+  font-size: 15px;
+  color: #444;
+  margin-top: auto;
+  padding-top: 16px;
+  margin-bottom: 6px;
+}
+
+/* Signature */
+.ecl-signature {
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #e8910a;
+  margin-top: 4px;
+}
+
+/* Signature Styles */
+.ecl-signature .signature {
+  font-size: 20px;
+  color: #e8910a;
+  font-weight: 600;
+  margin: 0;
+}
+
+.ecl-signature .signature-cursive { font-family: 'Brush Script MT', cursive; }
+.ecl-signature .signature-elegant { font-family: 'Lucida Handwriting', cursive; }
+.ecl-signature .signature-modern { font-family: 'Arial', sans-serif; font-weight: 300; }
+.ecl-signature .signature-classic { font-family: 'Times New Roman', serif; font-style: italic; }
+.ecl-signature .signature-bold { font-family: 'Arial Black', sans-serif; font-weight: bold; }
+.ecl-signature .signature-script { font-family: 'Lucida Script', cursive; }
+.ecl-signature .signature-handwritten { font-family: 'Comic Sans MS', cursive; }
+.ecl-signature .signature-professional { font-family: 'Times New Roman', Georgia, serif; font-weight: 600; }
+.ecl-signature .signature-artistic { font-family: 'Brush Script MT', cursive; transform: rotate(-2deg); }
+.ecl-signature .signature-minimalist { font-family: 'Helvetica', sans-serif; font-weight: 200; }
+.ecl-signature .signature-vintage { font-family: 'Old English Text MT', serif; }
+.ecl-signature .signature-contemporary { font-family: 'Trebuchet MS', sans-serif; }
+.ecl-signature .signature-sophisticated { font-family: 'Garamond', serif; font-style: italic; }
+.ecl-signature .signature-creative { font-family: 'Impact', sans-serif; letter-spacing: 2px; }
+.ecl-signature .signature-flowing { font-family: 'Edwardian Script ITC', cursive; }

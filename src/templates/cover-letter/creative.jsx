@@ -246,15 +246,29 @@ Looking forward to your email should I be selected following the preliminary scr
 
           {/* RECIPIENT INFO */}
           <div className="creative-recipient-section">
+            <div className="creative-date">
+              <p>{currentDate}</p>
+            </div>
             <div className="creative-recipient">
               <p>{recipientName}</p>
-              {professionalTitle && <p>{professionalTitle}</p>}
-              {companyName && companyName !== 'Company Name' && <p>{companyName}</p>}
-              {companyAddress && companyAddress.split('\n').map((line, i) => (
-                <p key={i}>{line}</p>
-              ))}
+              <p>{companyName}</p>
+              {positionTitle && <p>{positionTitle}</p>}
+              {companyAddress && (
+                <>
+                  {companyAddress.split('\n').map((line, index) => (
+                    <p key={index}>{line}</p>
+                  ))}
+                </>
+              )}
             </div>
           </div>
+
+          {/* SUBJECT LINE */}
+          {subject && (
+            <div className="creative-subject-section">
+              <p className="creative-subject"><strong>Re: {subject}</strong></p>
+            </div>
+          )}
 
           {/* SALUTATION */}
           <p className="creative-salutation">{salutation}</p>

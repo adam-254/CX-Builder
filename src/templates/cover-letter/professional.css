@@ -162,6 +162,19 @@
   font-family: 'Times New Roman', Georgia, serif;
 }
 
+/* ── SUBJECT SECTION ── */
+.professional-subject-section {
+  margin-bottom: 20px;
+}
+
+.professional-subject {
+  font-size: 15px;
+  color: #2C3E50;
+  margin: 0;
+  font-family: 'Times New Roman', Georgia, serif;
+  font-weight: 600;
+}
+
 /* ── CONTENT PARAGRAPHS ── */
 .professional-content {
   margin-bottom: 40px;

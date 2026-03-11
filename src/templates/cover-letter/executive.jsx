@@ -250,10 +250,15 @@ I would welcome the opportunity to discuss how my background and strategic visio
           <div className="executive-recipient-section">
             <div className="executive-recipient">
               <p>{recipientName}</p>
-              {companyAddress && companyAddress.split('\n').map((line, i) => (
-                <p key={i}>{line}</p>
-              ))}
-              {companyName && companyName !== 'Company Name' && <p>{companyName}</p>}
+              <p>{companyName}</p>
+              {positionTitle && <p>{positionTitle}</p>}
+              {companyAddress && (
+                <>
+                  {companyAddress.split('\n').map((line, index) => (
+                    <p key={index}>{line}</p>
+                  ))}
+                </>
+              )}
             </div>
           </div>
 
@@ -264,8 +269,8 @@ I would welcome the opportunity to discuss how my background and strategic visio
 
           {/* SUBJECT LINE */}
           {subject && subject.trim() && (
-            <div className="executive-subject">
-              <strong>Re: {subject}</strong>
+            <div className="executive-subject-section">
+              <p className="executive-subject"><strong>Re: {subject}</strong></p>
             </div>
           )}
 

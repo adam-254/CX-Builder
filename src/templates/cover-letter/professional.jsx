@@ -237,12 +237,24 @@ Thank you for considering my application. I look forward to the possibility of j
           <div className="professional-recipient-section">
             <div className="professional-recipient">
               <p>{recipientName}</p>
-              {companyAddress && companyAddress.split('\n').map((line, i) => (
-                <p key={i}>{line}</p>
-              ))}
-              {companyName && companyName !== 'Company Name' && <p>{companyName}</p>}
+              <p>{companyName}</p>
+              {positionTitle && <p>{positionTitle}</p>}
+              {companyAddress && (
+                <>
+                  {companyAddress.split('\n').map((line, index) => (
+                    <p key={index}>{line}</p>
+                  ))}
+                </>
+              )}
             </div>
           </div>
+
+          {/* SUBJECT LINE */}
+          {subject && (
+            <div className="professional-subject-section">
+              <p className="professional-subject"><strong>Re: {subject}</strong></p>
+            </div>
+          )}
 
           {/* SALUTATION */}
           <p className="professional-salutation">{salutation}</p>

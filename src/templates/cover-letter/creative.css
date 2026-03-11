@@ -298,6 +298,32 @@
   font-weight: 400;
 }
 
+/* ── DATE SECTION ── */
+.creative-date {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.creative-date p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ── SUBJECT SECTION ── */
+.creative-subject-section {
+  margin-bottom: 20px;
+}
+
+.creative-subject {
+  font-size: 16px;
+  color: #2C3E50;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+}
+
 /* ── SALUTATION ── */
 .creative-salutation {
   font-size: 16px;
