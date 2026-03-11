@@ -1,5 +1,336 @@
-.minimalist .letter-header {
-  text-align: center;
-  border-bottom: 1px solid #e5e7eb;
-  padding-bottom: 1rem;
+/* Minimalist Cover Letter Template - Clean & Elegant */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── WRAPPER ── */
+.minimalist-wrapper {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: transparent;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── PAGE ── */
+.minimalist-page {
+  background: #ffffff;
+  width: 8.5in;
+  min-height: 11in;
+  max-width: 8.5in;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 60px 60px 80px;
+}
+
+/* ── HEADER ── */
+.minimalist-header {
+  margin-bottom: 40px;
+}
+
+.minimalist-name-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.minimalist-name {
+  font-size: 32px;
+  font-weight: 700;
+  color: #D97706;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.minimalist-title-badge {
+  background: #D97706;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── CONTACT ROW ── */
+.minimalist-contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+}
+
+.minimalist-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6B7280;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.minimalist-contact-icon {
+  width: 16px;
+  height: 16px;
+  color: #9CA3AF;
+  flex-shrink: 0;
+}
+
+/* ── MAIN CONTENT ── */
+.minimalist-main {
+  flex: 1;
+}
+
+/* ── TOP ROW (Recipient + Date) ── */
+.minimalist-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  gap: 20px;
+}
+
+.minimalist-recipient p {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.4;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.minimalist-date {
+  font-size: 14px;
+  color: #9CA3AF;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+/* ── SUBJECT LINE ── */
+.minimalist-subject {
+  font-size: 15px;
+  color: #374151;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── SALUTATION ── */
+.minimalist-salutation {
+  font-size: 15px;
+  color: #111827;
+  font-weight: 500;
+  margin: 0 0 24px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── CONTENT PARAGRAPHS ── */
+.minimalist-content {
+  margin-bottom: 40px;
+}
+
+.minimalist-paragraph {
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.7;
+  margin: 0 0 20px 0;
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.minimalist-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* ── SIGNATURE SECTION ── */
+.minimalist-signature-section {
+  margin-top: auto;
+}
+
+.minimalist-closing {
+  font-size: 15px;
+  color: #111827;
+  margin: 0 0 16px 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+/* ── SIGNATURE ── */
+.minimalist-signature {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.generated-signature {
+  display: inline-block;
+  position: relative;
+  margin-left: 0;
+  margin-top: 8px;
+}
+
+.signature-svg {
+  display: block;
+  max-width: 100px;
+  height: auto;
+}
+
+.signature-initial {
+  animation: fadeInSignature 1.2s ease-in-out;
+}
+
+@keyframes fadeInSignature {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.text-signature {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #D97706;
+  font-style: normal;
+}
+
+/* Signature hover effects */
+.generated-signature:hover .signature-svg {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+
+/* ── RESPONSIVE DESIGN ── */
+@media (max-width: 1000px) {
+  .minimalist-wrapper {
+    padding: 16px;
+    background: #fff;
+  }
+  
+  .minimalist-page {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    padding: 40px 24px 60px;
+  }
+  
+  .minimalist-name-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .minimalist-name {
+    font-size: 28px;
+  }
+  
+  .minimalist-contact-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .minimalist-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .minimalist-page {
+    padding: 32px 20px 48px;
+  }
+  
+  .minimalist-name {
+    font-size: 24px;
+  }
+  
+  .minimalist-title-badge {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+  
+  .minimalist-contact-item {
+    font-size: 13px;
+  }
+  
+  .minimalist-paragraph {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* ── PRINT STYLES ── */
+@media print {
+  .minimalist-wrapper {
+    background: transparent;
+    padding: 0;
+    min-height: auto;
+  }
+
+  .minimalist-page {
+    box-shadow: none;
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    margin: 0;
+    padding: 40px;
+  }
+  
+  .minimalist-name {
+    color: #D97706 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .minimalist-title-badge {
+    background: #D97706 !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .text-signature {
+    color: #D97706 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .signature-svg path {
+    stroke: #D97706 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .signature-svg text {
+    fill: #D97706 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .signature-svg circle {
+    fill: #D97706 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }
