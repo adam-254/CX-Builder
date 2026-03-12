@@ -195,7 +195,6 @@ function HorizonCoverLetter({ data }) {
                 </div>
               )}
             </div>
-            <p className="horizon-signature">{fullName.toUpperCase()}</p>
           </div>
 
         </div>

@@ -1,21 +1,377 @@
-.nexus .letter-header {
-  border: 3px solid #1f2937;
-  padding: 1.5rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.nexus .letter-header h1 {
+.nexus-cover-letter {
+  --black: #111111;
+  --white: #ffffff;
+  --gray-bar: #888888;
+  --text-body: #1a1a1a;
+  --text-mid: #333333;
+
+  font-family: 'Times New Roman', Times, serif;
+  background: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+/* ── Paper ── */
+.nexus-paper {
+  background: var(--white);
+  width: 100%;
+  max-width: 780px;
+  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.18), 0 2px 10px rgba(0, 0, 0, 0.08);
   position: relative;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+.nexus-header {
+  background: var(--black);
+  padding: 44px 48px 40px 48px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 32px;
+  min-height: 120px;
+}
+
+.nexus-name {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -0.8px;
+  word-break: keep-all;
+}
+
+/* ── Contact info (right side of header) ── */
+.nexus-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.nexus-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--white);
+}
+
+.nexus-contact-icon {
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nexus-contact-icon svg {
+  width: 12px;
+  height: 12px;
+  stroke: var(--white);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nexus-contact-value {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.88);
+  white-space: nowrap;
+}
+
+/* ── Gray divider bar ── */
+.nexus-divider {
+  height: 6px;
+  background: var(--gray-bar);
+}
+
+/* ── Body ── */
+.nexus-body {
+  position: relative;
+  z-index: 1;
+  padding: 64px 48px 72px 48px;
+}
+
+/* Date */
+.nexus-date-section {
+  margin-bottom: 24px;
+}
+
+.nexus-date {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-body);
+}
+
+/* Recipient Information */
+.nexus-recipient-section {
+  margin-bottom: 24px;
+}
+
+.nexus-recipient-name {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-body);
+  margin-bottom: 8px;
+}
+
+.nexus-recipient-details {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-body);
+  line-height: 1.4;
+}
+
+.nexus-recipient-details div {
+  margin-bottom: 2px;
+}
+
+/* Subject Line */
+.nexus-subject {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-body);
+  margin-bottom: 24px;
+}
+
+/* Salutation */
+.nexus-salutation {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-body);
+  margin-bottom: 36px;
+}
+
+/* Letter Content */
+.nexus-letter-content {
+  margin-bottom: 24px;
+}
+
+/* Paragraphs */
+.nexus-paragraph {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-mid);
+  line-height: 1.85;
+  margin-bottom: 22px;
+}
+
+/* Closing */
+.nexus-closing {
+  margin-top: 48px;
+}
+
+.nexus-closing-word {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-body);
+  margin-bottom: 28px;
+}
+
+/* Signature Styles */
+.nexus-signature-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.signature {
+  display: inline-block;
+  padding: 8px 0;
+  color: var(--text-body);
+}
+
+.signature-professional {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.signature-cursive {
+  font-family: 'Dancing Script', cursive;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.signature-bold {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.signature-italic {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.signature-underline {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+.signature-elegant {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.signature-modern {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.signature-creative {
+  font-family: 'Dancing Script', cursive;
+  font-size: 26px;
+  font-weight: 700;
+  font-style: normal;
+  color: #2c3e50;
+}
+
+.signature-minimal {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: lowercase;
+}
+
+.signature-executive {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 17px;
+  font-weight: 600;
+  font-style: normal;
+  border-bottom: 2px solid #333;
+  padding-bottom: 2px;
+}
+
+.signature-artistic {
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+  font-weight: 600;
+  font-style: normal;
+  transform: rotate(-2deg);
   display: inline-block;
 }
 
-.nexus .letter-header h1::after {
-  content: '';
-  position: absolute;
-  bottom: -0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 3px;
-  background: #3b82f6;
+.signature-tech {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Courier New', monospace;
+  background: #f8f9fa;
+  padding: 4px 8px;
+  border-left: 3px solid #007acc;
+}
+
+.signature-vintage {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.signature-handwritten {
+  font-family: 'Dancing Script', cursive;
+  font-size: 22px;
+  font-weight: 500;
+  font-style: normal;
+  transform: rotate(-1deg);
+  display: inline-block;
+}
+
+.signature-formal {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.signature-stylish {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 1.5px;
+  border-bottom: 1px dotted #666;
+  padding-bottom: 3px;
+}
+
+/* ── Print ── */
+@media print {
+  .nexus-cover-letter {
+    background: none;
+    padding: 0;
+  }
+  .nexus-paper {
+    box-shadow: none;
+    max-width: 100%;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 620px) {
+  .nexus-header {
+    grid-template-columns: 1fr;
+    padding: 32px 28px;
+    gap: 28px;
+    min-height: auto;
+  }
+  
+  .nexus-name {
+    text-align: center;
+    font-size: clamp(24px, 8vw, 36px);
+  }
+  
+  .nexus-body {
+    padding: 44px 28px 56px;
+  }
+  .nexus-contact-value {
+    white-space: normal;
+  }
 }

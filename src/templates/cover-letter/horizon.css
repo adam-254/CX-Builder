@@ -272,37 +272,80 @@
   margin-bottom: 10px;
 }
 
-.horizon-signature {
-  font-family: 'Times New Roman', Georgia, serif;
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--orange);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
 /* Signature Styles */
 .horizon-signature-section .signature {
-  font-size: 20px;
-  color: var(--text-mid);
+  font-size: 24px;
+  color: var(--text-dark);
   font-weight: 600;
   margin: 0;
   line-height: 1.2;
+  display: block;
 }
 
-.horizon-signature-section .signature-cursive { font-family: 'Dancing Script', cursive; }
-.horizon-signature-section .signature-elegant { font-family: 'Dancing Script', cursive; }
-.horizon-signature-section .signature-modern { font-family: 'Times New Roman', Georgia, serif; font-weight: 300; }
-.horizon-signature-section .signature-classic { font-family: 'Times New Roman', Georgia, serif; font-style: italic; }
-.horizon-signature-section .signature-bold { font-family: 'Times New Roman', Georgia, serif; font-weight: bold; }
-.horizon-signature-section .signature-script { font-family: 'Dancing Script', cursive; }
-.horizon-signature-section .signature-handwritten { font-family: 'Dancing Script', cursive; }
-.horizon-signature-section .signature-professional { font-family: 'Times New Roman', Georgia, serif; font-weight: 500; }
-.horizon-signature-section .signature-artistic { font-family: 'Dancing Script', cursive; transform: rotate(-2deg); }
-.horizon-signature-section .signature-minimalist { font-family: 'Times New Roman', Georgia, serif; font-weight: 200; }
-.horizon-signature-section .signature-vintage { font-family: 'Times New Roman', Georgia, serif; }
-.horizon-signature-section .signature-contemporary { font-family: 'Times New Roman', Georgia, serif; }
-.horizon-signature-section .signature-sophisticated { font-family: 'Times New Roman', Georgia, serif; font-style: italic; }
-.horizon-signature-section .signature-creative { font-family: 'Times New Roman', Georgia, serif; letter-spacing: 2px; }
-.horizon-signature-section .signature-flowing { font-family: 'Dancing Script', cursive; }
+.horizon-signature-section .signature-cursive { 
+  font-family: 'Dancing Script', cursive; 
+  font-size: 28px;
+}
+.horizon-signature-section .signature-elegant { 
+  font-family: 'Dancing Script', cursive; 
+  font-size: 28px;
+}
+.horizon-signature-section .signature-modern { 
+  font-family: 'Times New Roman', Georgia, serif; 
+  font-weight: 300; 
+  font-style: normal;
+}
+.horizon-signature-section .signature-classic { 
+  font-family: 'Times New Roman', Georgia, serif; 
+  font-style: italic; 
+  font-weight: 500;
+}
+.horizon-signature-section .signature-bold { 
+  font-family: 'Times New Roman', Georgia, serif; 
+  font-weight: bold; 
+}
+.horizon-signature-section .signature-script { 
+  font-family: 'Dancing Script', cursive; 
+  font-size: 28px;
+}
+.horizon-signature-section .signature-handwritten { 
+  font-family: 'Dancing Script', cursive; 
+  font-size: 26px;
+}
+.horizon-signature-section .signature-professional { 
+  font-family: 'Times New Roman', Georgia, serif; 
+  font-weight: 500; 
+}
+.horizon-signature-section .signature-artistic { 
+  font-family: 'Dancing Script', cursive; 
+  transform: rotate(-2deg); 
+  font-size: 26px;
+}
+.horizon-signature-section .signature-minimalist { 
+  font-family: 'Times New Roman', Georgia, serif; 
+  font-weight: 200; 
+}
+.horizon-signature-section .signature-vintage { 
+  font-family: 'Times New Roman', Georgia, serif; 
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.horizon-signature-section .signature-contemporary { 
+  font-family: 'Times New Roman', Georgia, serif; 
+  font-weight: 400;
+}
+.horizon-signature-section .signature-sophisticated { 
+  font-family: 'Times New Roman', Georgia, serif; 
+  font-style: italic; 
+  font-weight: 500;
+}
+.horizon-signature-section .signature-creative { 
+  font-family: 'Times New Roman', Georgia, serif; 
+  letter-spacing: 3px; 
+  font-weight: 700;
+}
+.horizon-signature-section .signature-flowing { 
+  font-family: 'Dancing Script', cursive; 
+  font-size: 28px;
+}
 
