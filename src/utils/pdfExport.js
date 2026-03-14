@@ -78,7 +78,6 @@ export const exportToPDF = async (elementId, filename = 'document', pages = [], 
     
     // Track the download
     if (documentData) {
-      console.log('Dispatching documentDownloaded event with data:', documentData) // Debug log
       const downloadEvent = new CustomEvent('documentDownloaded', {
         detail: {
           documentData: documentData,
@@ -87,8 +86,6 @@ export const exportToPDF = async (elementId, filename = 'document', pages = [], 
         }
       })
       window.dispatchEvent(downloadEvent)
-    } else {
-      console.log('No documentData provided for tracking') // Debug log
     }
     
     // Hide loading state

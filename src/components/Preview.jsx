@@ -69,17 +69,6 @@ function Preview({ formData, template, docType, onSave, onDownload, pages, onAdd
   const pageRefs = useRef([])
   const [overflowPages, setOverflowPages] = useState([])
 
-  // Debug logging for formData changes
-  useEffect(() => {
-    console.log('Preview: formData changed:', {
-      fullName: formData?.fullName,
-      email: formData?.email,
-      template,
-      docType,
-      hasData: Object.keys(formData || {}).length > 0
-    });
-  }, [formData, template, docType])
-
   useEffect(() => {
     // Check for overflow on each page
     const checkOverflow = () => {

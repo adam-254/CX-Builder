@@ -48,8 +48,6 @@ function CoverLetterEditor({ document, onNavigate, onClose }) {
   // Load document data on mount
   useEffect(() => {
     if (document) {
-      console.log('CoverLetterEditor: Loading document:', document)
-      
       setFormData({
         documentTitle: document.documentTitle || document.name || '',
         professionalTitle: document.professionalTitle || '',

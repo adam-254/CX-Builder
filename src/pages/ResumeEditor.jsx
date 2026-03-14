@@ -57,8 +57,6 @@ function ResumeEditor({ document, onNavigate, onClose }) {
   // Load document data on mount
   useEffect(() => {
     if (document) {
-      console.log('ResumeEditor: Loading document:', document)
-      
       setFormData({
         documentTitle: document.documentTitle || document.name || '',
         professionalTitle: document.professionalTitle || '',

@@ -32,10 +32,7 @@ function App() {
 
   // Global download tracking - works regardless of current page
   useEffect(() => {
-    console.log('App: Setting up global download tracking listener') // Debug log
-    
     const handleDocumentDownloaded = (event) => {
-      console.log('App: Global download event received:', event.detail) // Debug log
       const { documentData, filename, downloadedAt } = event.detail
       
       // Create download record
@@ -62,15 +59,12 @@ function App() {
         pages: documentData.pages || []
       }
 
-      console.log('App: Created download record:', downloadRecord) // Debug log
-
       // Save to localStorage
       const currentDownloads = JSON.parse(localStorage.getItem('download_history') || '[]')
       const updatedDownloads = [downloadRecord, ...currentDownloads]
       const limitedDownloads = updatedDownloads.slice(0, 50)
       
       localStorage.setItem('download_history', JSON.stringify(limitedDownloads))
-      console.log('App: Saved download to localStorage, total downloads:', limitedDownloads.length) // Debug log
       
       // Dispatch event to notify Downloads page if it's mounted
       window.dispatchEvent(new CustomEvent('downloadHistoryUpdated', {
@@ -79,10 +73,8 @@ function App() {
     }
 
     window.addEventListener('documentDownloaded', handleDocumentDownloaded)
-    console.log('App: Global download listener added') // Debug log
     
     return () => {
-      console.log('App: Removing global download listener') // Debug log
       window.removeEventListener('documentDownloaded', handleDocumentDownloaded)
     }
   }, [])
@@ -96,14 +88,12 @@ function App() {
   }
 
   const handleLoadDocument = (doc) => {
-    console.log('App: Loading document:', doc); // Debug log
     setLoadedDocument(doc)
     // Force a re-render by updating the key
     setCurrentPage('builder')
   }
 
   const handleEditDocument = (doc) => {
-    console.log('App: Editing document:', doc); // Debug log
     setEditingDocument(doc)
     if (doc.type === 'resume') {
       setCurrentPage('resume-editor')

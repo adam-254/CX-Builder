@@ -99,8 +99,6 @@ function History({ onNavigate, onLoadDocument, onEditDocument }) {
   }
 
   const handleLoad = (doc) => {
-    console.log('History: Loading document for editing:', doc); // Debug log
-    
     // Use the new editor pages instead of the builder
     onEditDocument(doc)
     showSuccess(`Opening ${doc.type === 'resume' ? 'resume' : 'cover letter'} editor: ${doc.documentTitle || doc.name}`)

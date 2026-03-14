@@ -10,35 +10,26 @@ function Downloads({ onNavigate, onEditDocument }) {
   const [filter, setFilter] = useState('all')
 
   useEffect(() => {
-    console.log('Downloads page: Component mounted, loading downloads') // Debug log
     loadDownloads()
     
     const handleDownloadHistoryUpdated = (event) => {
-      console.log('Downloads page: Download history updated event received:', event.detail) // Debug log
       const { downloads } = event.detail
       setDownloads(downloads)
     }
 
     window.addEventListener('downloadHistoryUpdated', handleDownloadHistoryUpdated)
-    console.log('Downloads page: Event listener added for downloadHistoryUpdated') // Debug log
     
     return () => {
-      console.log('Downloads page: Removing event listener') // Debug log
       window.removeEventListener('downloadHistoryUpdated', handleDownloadHistoryUpdated)
     }
   }, [])
 
   const loadDownloads = () => {
-    console.log('Downloads page: Loading downloads from localStorage') // Debug log
     const saved = localStorage.getItem('download_history')
-    console.log('Downloads page: Raw localStorage data:', saved) // Debug log
     
     if (saved) {
       const downloadHistory = JSON.parse(saved)
-      console.log('Downloads page: Parsed download history:', downloadHistory) // Debug log
       setDownloads(downloadHistory)
-    } else {
-      console.log('Downloads page: No download history found in localStorage') // Debug log
     }
   }
 
@@ -57,8 +48,6 @@ function Downloads({ onNavigate, onEditDocument }) {
   }
 
   const handleEdit = (download) => {
-    console.log('Downloads page: Edit button clicked for download:', download) // Debug log
-    
     // Create a document object that matches the expected format for editors
     const documentForEditor = {
       id: download.originalDocumentId || download.id,
@@ -104,8 +93,6 @@ function Downloads({ onNavigate, onEditDocument }) {
       createdAt: download.downloadedAt,
       updatedAt: download.downloadedAt
     }
-    
-    console.log('Downloads page: Prepared document for editor:', documentForEditor) // Debug log
     
     // Call the onEditDocument callback to navigate to the appropriate editor
     onEditDocument(documentForEditor)

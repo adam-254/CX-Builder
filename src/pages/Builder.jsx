@@ -64,8 +64,6 @@ function Builder({ loadedDocument, onClearDocument }) {
   useEffect(() => {
     if (loadedDocument && loadedDocument.formData) {
       setIsLoadingDocument(true)
-      console.log('Builder: Loading document', loadedDocument); // Debug log
-      console.log('Builder: Current formData before loading:', formData); // Debug log
       
       // Force immediate state update
       const newFormData = { ...loadedDocument.formData }
@@ -78,10 +76,6 @@ function Builder({ loadedDocument, onClearDocument }) {
           : ['header', 'recipient', 'content', 'signature']
       }]
       
-      console.log('Builder: Setting formData to:', newFormData); // Debug log
-      console.log('Builder: Setting template to:', newTemplate); // Debug log
-      console.log('Builder: Setting docType to:', newDocType); // Debug log
-      
       setFormData(newFormData)
       setTemplate(newTemplate)
       setDocType(newDocType)
@@ -89,7 +83,6 @@ function Builder({ loadedDocument, onClearDocument }) {
       
       // Use a timeout to ensure all state updates are processed
       setTimeout(() => {
-        console.log('Builder: Document loaded, formData updated'); // Debug log
         setIsLoadingDocument(false)
         
         // Clear the loaded document after processing to prevent re-loading
