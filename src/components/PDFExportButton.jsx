@@ -27,7 +27,18 @@ function PDFExportButton({
         const filename = formData?.documentTitle || 
                         (formData?.fullName ? `${formData.fullName}_${docType}` : `my_${docType}`)
         
-        await exportToPDF('preview-content', filename, pages)
+        // Prepare document data for tracking
+        const documentForTracking = documentData || {
+          id: formData?.id || null,
+          documentTitle: formData?.documentTitle,
+          name: formData?.documentTitle || filename,
+          type: docType,
+          template: formData?.template || 'modern',
+          ...formData,
+          pages
+        }
+        
+        await exportToPDF('preview-content', filename, pages, documentForTracking)
       }
     } catch (error) {
       console.error('Export failed:', error)

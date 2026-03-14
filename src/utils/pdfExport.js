@@ -6,8 +6,9 @@ import jsPDF from 'jspdf'
  * @param {string} elementId - ID of the element to export
  * @param {string} filename - Name of the PDF file
  * @param {Array} pages - Array of page data
+ * @param {Object} documentData - Document data for tracking
  */
-export const exportToPDF = async (elementId, filename = 'document', pages = []) => {
+export const exportToPDF = async (elementId, filename = 'document', pages = [], documentData = null) => {
   try {
     // Show loading state
     const loadingToast = showLoadingToast()
@@ -74,6 +75,21 @@ export const exportToPDF = async (elementId, filename = 'document', pages = []) 
 
     // Save the PDF
     pdf.save(`${filename}.pdf`)
+    
+    // Track the download
+    if (documentData) {
+      console.log('Dispatching documentDownloaded event with data:', documentData) // Debug log
+      const downloadEvent = new CustomEvent('documentDownloaded', {
+        detail: {
+          documentData: documentData,
+          filename: `${filename}.pdf`,
+          downloadedAt: new Date().toISOString()
+        }
+      })
+      window.dispatchEvent(downloadEvent)
+    } else {
+      console.log('No documentData provided for tracking') // Debug log
+    }
     
     // Hide loading state
     hideLoadingToast(loadingToast)

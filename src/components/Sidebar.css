@@ -4,7 +4,6 @@
   border-right: 1px solid #1f2937;
   overflow-y: auto;
   padding: 1.5rem;
-  transition: transform 0.3s ease-in-out;
   position: relative;
   z-index: 100;
 }
@@ -15,6 +14,15 @@
 
 .sidebar-close {
   display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 1024px) {

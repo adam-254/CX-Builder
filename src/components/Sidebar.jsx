@@ -1,6 +1,6 @@
 import './Sidebar.css'
 
-function Sidebar({ formData, setFormData, template, setTemplate, docType, setDocType, onOpenModal, isOpen, onClose }) {
+function Sidebar({ formData, setFormData, template, setTemplate, docType, setDocType, onOpenModal }) {
   const templates = [
     'Modern', 'Minimalist', 'Executive', 'Creative', 'Professional', 
     'Compact', 'Bold', 'Elegant', 'Tech', 'Spectrum', 'Horizon', 'Nexus', 'Prism'
@@ -16,14 +16,7 @@ function Sidebar({ formData, setFormData, template, setTemplate, docType, setDoc
   }
 
   return (
-    <>
-      {isOpen && <div className="sidebar-overlay" onClick={onClose} />}
-      <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
-        <button className="sidebar-close" onClick={onClose}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          </svg>
-        </button>
+    <aside className="sidebar">
       <section className="section">
         <h3>TEMPLATES</h3>
         <div className="template-grid">
@@ -519,7 +512,6 @@ function Sidebar({ formData, setFormData, template, setTemplate, docType, setDoc
         </>
       )}
       </aside>
-    </>
   )
 }
 

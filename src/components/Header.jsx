@@ -1,15 +1,17 @@
+import { useState } from 'react'
+import { useAuth } from '../contexts/AuthContext'
+import UserProfile from './UserProfile'
+import AuthModal from './auth/AuthModal'
 import './Header.css'
 import VisitorCounter from './VisitorCounter'
 
-function Header({ onMenuToggle, onNavigate, currentPage }) {
+function Header({ onNavigate, currentPage }) {
+  const { currentUser } = useAuth()
+  const [showAuthModal, setShowAuthModal] = useState(false)
+
   return (
     <header className="header">
       <div className="header-left">
-        <button className="menu-toggle" onClick={onMenuToggle}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          </svg>
-        </button>
         <img src="/CX_logo.png" alt="CX Logo" className="logo" />
         <h1>CX Builder</h1>
       </div>
@@ -27,7 +29,29 @@ function Header({ onMenuToggle, onNavigate, currentPage }) {
         >
           History
         </button>
+        <button 
+          className={`btn-secondary ${currentPage === 'downloads' ? 'active' : ''}`}
+          onClick={() => onNavigate('downloads')}
+        >
+          Downloads
+        </button>
+        
+        {currentUser ? (
+          <UserProfile />
+        ) : (
+          <button 
+            className="btn-auth"
+            onClick={() => setShowAuthModal(true)}
+          >
+            Sign In
+          </button>
+        )}
       </div>
+
+      <AuthModal 
+        isOpen={showAuthModal}
+        onClose={() => setShowAuthModal(false)}
+      />
     </header>
   )
 }

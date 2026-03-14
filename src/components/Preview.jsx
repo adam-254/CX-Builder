@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import './Preview.css'
 import PDFExportButton from './PDFExportButton'
+import SaveButton from './SaveButton'
 import './PDFExportButton.css'
 import ModernResume from '../templates/resume/modern'
 import MinimalistResume from '../templates/resume/minimalist'
@@ -62,11 +63,22 @@ const coverLetterTemplates = {
   prism: PrismCoverLetter
 }
 
-function Preview({ formData, template, docType, onSave, onDownload, pages, onAddPage, onDeletePage, onUpdatePage, onManageSections }) {
+function Preview({ formData, template, docType, onSave, onDownload, pages, onAddPage, onDeletePage, onUpdatePage, onManageSections, documentId = null, isEditorMode = false }) {
   const templates = docType === 'resume' ? resumeTemplates : coverLetterTemplates
   const TemplateComponent = templates[template] || templates.modern
   const pageRefs = useRef([])
   const [overflowPages, setOverflowPages] = useState([])
+
+  // Debug logging for formData changes
+  useEffect(() => {
+    console.log('Preview: formData changed:', {
+      fullName: formData?.fullName,
+      email: formData?.email,
+      template,
+      docType,
+      hasData: Object.keys(formData || {}).length > 0
+    });
+  }, [formData, template, docType])
 
   useEffect(() => {
     // Check for overflow on each page
@@ -97,6 +109,14 @@ function Preview({ formData, template, docType, onSave, onDownload, pages, onAdd
     return () => clearTimeout(timer)
   }, [formData, pages, template])
 
+  // Prepare document data for saving
+  const documentData = {
+    ...formData,
+    template,
+    selectedTemplate: template,
+    pages
+  }
+
   return (
     <main className="preview-area">
       <div className="preview-header">
@@ -108,17 +128,28 @@ function Preview({ formData, template, docType, onSave, onDownload, pages, onAdd
             </svg>
             <span>Manage Sections</span>
           </button>
-          <button className="btn-save" onClick={onSave}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" stroke="currentColor" strokeWidth="2"/>
-            </svg>
-            <span>Save</span>
-          </button>
+          {!isEditorMode && (
+            <SaveButton 
+              documentData={documentData}
+              documentType={docType}
+              documentId={documentId}
+              className="btn-save"
+            />
+          )}
           <PDFExportButton 
             formData={formData}
             docType={docType}
             pages={pages}
             className="btn-download"
+            documentData={{
+              id: documentId,
+              documentTitle: formData?.documentTitle,
+              name: formData?.documentTitle || (formData?.fullName ? `${formData.fullName}_${docType}` : `my_${docType}`),
+              type: docType,
+              template: formData?.template || 'modern',
+              ...formData,
+              pages
+            }}
           />
         </div>
       </div>
